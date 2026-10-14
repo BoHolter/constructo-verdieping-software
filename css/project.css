@@ -1147,15 +1147,25 @@ html.dark .projects-index .media { background: #1a212b }
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
+    align-items: start;
 }
 .quote-card {
     margin: 0;
-    padding: 24px;
+    padding: 22px;
     background: var(--surface);
     border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.quote-card .quote-stars {
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    font-size: 0.95rem;
+    line-height: 1;
 }
 .quote-card p {
-    margin: 0 0 18px;
+    margin: 0;
     font-size: 1.05rem;
     line-height: 1.55;
     color: var(--ink);
@@ -1163,7 +1173,9 @@ html.dark .projects-index .media { background: #1a212b }
 .quote-card footer {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
 }
 .quote-card strong {
     font-family: var(--font-display);
@@ -1177,6 +1189,18 @@ html.dark .projects-index .media { background: #1a212b }
     text-transform: uppercase;
     color: var(--muted);
 }
+.quote-card footer a {
+    margin-top: 6px;
+    width: fit-content;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--accent);
+}
+.quote-card footer a:hover { text-decoration: underline; text-underline-offset: 3px }
 
 .faq-list { display: grid; gap: 0; border-top: 1px solid var(--line) }
 .faq-item {

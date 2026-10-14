@@ -740,25 +740,67 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
+    align-items: start;
 }
-.home-quotes blockquote {
+.home-quote {
     margin: 0;
-    padding: 22px;
+    padding: 22px 22px 20px;
     background: var(--surface);
     border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
-.home-quotes p {
-    margin: 0 0 14px;
-    font-size: 1.05rem;
+.quote-stars {
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    font-size: 0.95rem;
+    line-height: 1;
 }
-.home-quotes footer {
+.home-quote blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+.home-quote blockquote p {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.5;
+    color: var(--ink);
+}
+.quote-meta {
+    display: grid;
+    gap: 4px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+.quote-meta strong {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-size: 0.95rem;
+    color: var(--ink);
+}
+.quote-meta span {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--muted);
 }
-.home-quotes strong { color: var(--ink); font-family: var(--font-display) }
+.quote-meta a {
+    margin-top: 6px;
+    width: fit-content;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--accent);
+}
+.quote-meta a:hover { text-decoration: underline; text-underline-offset: 3px }
 
 .cookie-bar {
     position: fixed;
