@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Warehouse Loft — Constructo</title>
+    <meta name="description" content="Warehouse Loft conversion in Amsterdam Noord by Constructo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="page-hero">
+        <div class="page-hero-media"><img src="../Warehouse-Loft.jpg" alt="Warehouse Loft project exterior" /></div>
+        <div class="page-hero-content">
+            <span class="section-label">Interior · 2025</span>
+            <h1>Warehouse Loft</h1>
+            <p>A warehouse bay turned into a live-work loft with mezzanine and daylight studio.</p>
+        </div>
+    </section>
+    <main class="container project-main" id="main">
+        <div class="specs" aria-label="Project facts">
+            <div><dt>Location</dt><dd>Amsterdam Noord</dd></div>
+            <div><dt>Client</dt><dd>Creative studio</dd></div>
+            <div><dt>Size</dt><dd>220 m²</dd></div>
+            <div><dt>Duration</dt><dd>9 months</dd></div>
+            <div><dt>Year</dt><dd>2025</dd></div>
+            <div><dt>Budget</dt><dd>€390k – €430k</dd></div>
+        </div>
+        <div class="project-layout">
+            <article class="project-copy">
+                <h2>The brief</h2>
+                <p>Turn a former warehouse bay into a live-work loft: double-height living, a quiet mezzanine bedroom, and a daylight studio corner for shoots.</p>
+                <h2>What we built</h2>
+                <p>We kept the brick shell, inserted a steel mezzanine, upgraded the roof lights, and built a kitchen volume that anchors the plan. Acoustic lining keeps neighbours happy when the studio works late.</p>
+                <h2>Detail notes</h2>
+                <p>Fire strategy and escape routes were designed with the building owner. Exposed services stay readable but tidy — part of the industrial character, not leftover chaos.</p>
+                <ul class="feature-list">
+                    <li>Steel mezzanine and double-height living</li>
+                    <li>Daylight studio corner</li>
+                    <li>Acoustic upgrades</li>
+                    <li>Preserved brick and steel windows</li>
+                </ul>
+            </article>
+            <aside class="project-aside">
+                <h3>Warehouse conversion?</h3>
+                <p>We balance character with comfort — warmth, sound, and code compliance.</p>
+                <a class="cta" href="contact.html?type=Renovation">Request a quote →</a>
+                <a class="back-link" href="projects.html">← All projects</a>
+            </aside>
+        </div>
+        <section class="project-gallery" aria-labelledby="galHeading">
+            <h2 id="galHeading">Gallery · before &amp; after</h2>
+            <div class="ba-pair">
+                <a class="gallery-item" href="../gallery-loft-before.jpg" data-lightbox data-full="../gallery-loft-before.jpg" data-caption="Warehouse before">
+                    <span class="gallery-badge">Before</span>
+                    <img src="../gallery-loft-before.jpg" alt="Empty warehouse bay before conversion" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../gallery-loft-after.jpg" data-lightbox data-full="../gallery-loft-after.jpg" data-caption="Loft after">
+                    <span class="gallery-badge">After</span>
+                    <img src="../gallery-loft-after.jpg" alt="Finished warehouse loft living space" loading="lazy" />
+                </a>
+            </div>
+            <div class="gallery-grid">
+                <a class="gallery-item" href="../Warehouse-Loft.jpg" data-lightbox data-full="../Warehouse-Loft.jpg" data-caption="Exterior">
+                    <img src="../Warehouse-Loft.jpg" alt="Warehouse loft exterior with steel windows" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../Urban%20Loft%20Revamp.jpg" data-lightbox data-full="../Urban%20Loft%20Revamp.jpg" data-caption="Interior detail">
+                    <img src="../Urban%20Loft%20Revamp.jpg" alt="Loft interior detailing" loading="lazy" />
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="site-footer-grid">
+                <div><a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a><p>General contracting and renovations across Amsterdam and the Randstad.</p></div>
+                <div><h4>Explore</h4><a href="projects.html">Projects</a><a href="process.html">How we work</a><a href="faq.html">FAQ</a></div>
+                <div><h4>Company</h4><a href="about.html">About</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div>
+                <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a></div>
+            </div>
+            <div class="footer-inner"><div>© <span id="year"></span> Constructo</div><div>Prototype for Verdieping Software</div></div>
+        </div>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/cookies.js"></script>
+</body>
+</html>

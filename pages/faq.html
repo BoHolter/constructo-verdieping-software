@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>FAQ — Constructo</title>
+    <meta name="description" content="FAQ about Constructo renovations, permits, pricing, and planning." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="page-hero">
+        <div class="page-hero-media" aria-hidden="true"><img src="../Constructor.png" alt="" /></div>
+        <div class="page-hero-content">
+            <span class="section-label">Help · FAQ</span>
+            <h1>FAQ</h1>
+            <p>Permits, prices, timelines, and living on site — answered plainly.</p>
+        </div>
+    </section>
+    <main class="container" id="main">        <section class="page-block">
+            <div class="page-intro">
+                <span class="section-label">Help</span>
+                <h2>Frequently asked questions</h2>
+                <p>Quick answers about permits, pricing, planning, and living on site during a build.</p>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item" open><summary>Do you handle building permits?</summary><p>Yes — we advise what is needed, prepare drawings with partners when required, and submit or support your application. Timelines depend on the municipality.</p></details>
+                <details class="faq-item"><summary>How accurate is the online estimate?</summary><p>It is a rough starting figure only. Final pricing always follows a site survey and a written quote with a clear scope.</p></details>
+                <details class="faq-item"><summary>Can we stay in the house during renovation?</summary><p>Often yes, with temporary seals and phased work. We discuss dust, noise, and access in the kickoff plan.</p></details>
+                <details class="faq-item"><summary>What is included in a fixed price?</summary><p>Everything listed in the scope document. Changes are written down and priced before we proceed — no silent extras.</p></details>
+                <details class="faq-item"><summary>How often do we get updates?</summary><p>You get a named project lead and weekly progress notes (and photos) while the site is active.</p></details>
+                <details class="faq-item"><summary>Which areas do you cover?</summary><p>Amsterdam and the wider Randstad. Further out is possible for larger projects — ask us.</p></details>
+            </div>
+        </section></main>
+    <section class="cta-band"><div class="container">
+        <h2>Ready to build?</h2>
+        <p>Tell us about your project — renovations, new builds, or commercial fit-outs.</p>
+        <a class="cta" href="contact.html">Get in touch →</a>
+    </div></section>
+    <footer><div class="container">
+        <div class="site-footer-grid">
+            <div><a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a><p>General contracting and renovations across Amsterdam and the Randstad.</p></div>
+            <div><h4>Explore</h4><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="process.html">How we work</a><a href="testimonials.html">Reviews</a><a href="faq.html">FAQ</a></div>
+            <div><h4>Company</h4><a href="about.html">About</a><a href="team.html">Team</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div>
+            <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a></div>
+        </div>
+        <div class="footer-inner"><div>© <span id="year"></span> Constructo — Building with integrity.</div><div>Prototype for Verdieping Software</div></div>
+    </div></footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+    <script src="../js/cookies.js"></script>
+</body></html>

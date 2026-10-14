@@ -37,9 +37,9 @@
                     <ul class="nav-list" id="mainMenu">
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
+                        <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
                         <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
                     </ul>
@@ -50,7 +50,7 @@
 
     <section class="page-hero">
         <div class="page-hero-media" aria-hidden="true">
-            <img src="../Coastal.jpg" alt="" />
+            <img src="../Coastal.jpg" alt="Project photo" />
         </div>
         <div class="page-hero-content">
             <span class="section-label">Commercial · 2023</span>
@@ -59,7 +59,7 @@
         </div>
     </section>
 
-    <main class="container project-main">
+    <main class="container project-main" id="main">
         <div class="specs" aria-label="Project facts">
             <div><dt>Location</dt><dd>Zandvoort</dd></div>
             <div><dt>Client</dt><dd>Tide &amp; Co. Studio</dd></div>
@@ -92,9 +92,28 @@
                 <h3>Planning a fit-out?</h3>
                 <p>We manage commercial interiors from strip-out to furniture install — one contract, one schedule.</p>
                 <a class="cta" href="contact.html?type=Commercial%20Fit-out">Request a quote →</a>
-                <a class="back-link" href="../Verdieping Software Prototype.html#projects">← All projects</a>
+                <a class="back-link" href="projects.html">← All projects</a>
             </aside>
-        </div>
+        </div>        <section class="project-gallery" aria-labelledby="galHeading">
+            <h2 id="galHeading">Gallery</h2>
+            <div class="gallery-grid">
+                <a class="gallery-item" href="../Coastal.jpg" data-lightbox data-full="../Coastal.jpg" data-caption="Coastal office">
+                    <img src="../Coastal.jpg" alt="Coastal office building exterior" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../gallery-loft-before.jpg" data-lightbox data-full="../gallery-loft-before.jpg" data-caption="Fit-out before">
+                    <span class="gallery-badge">Before</span>
+                    <img src="../gallery-loft-before.jpg" alt="Empty office floor before fit-out" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../gallery-loft-after.jpg" data-lightbox data-full="../gallery-loft-after.jpg" data-caption="Fit-out after">
+                    <span class="gallery-badge">After</span>
+                    <img src="../gallery-loft-after.jpg" alt="Finished office interior after fit-out" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../Rooftop-Terrace.jpg" data-lightbox data-full="../Rooftop-Terrace.jpg" data-caption="Break terrace">
+                    <img src="../Rooftop-Terrace.jpg" alt="Staff terrace outdoor seating" loading="lazy" />
+                </a>
+            </div>
+        </section>
+
 
         <section class="related" aria-labelledby="relatedHeading">
             <h2 id="relatedHeading">More projects</h2>
@@ -120,6 +139,11 @@
                 <div>© <span id="year"></span> Constructo — Building with integrity.</div>
                 <div>
                     <a href="contact.html">Contact</a>
+                    · <a href="process.html">Process</a>
+                    · <a href="faq.html">FAQ</a>
+                    · <a href="privacy.html">Privacy</a>
+                    · <a href="cookies.html">Cookies</a>
+                    · <a href="terms.html">Terms</a>
                     · Tel: +31 20 123 4567
                 </div>
             </div>
@@ -127,6 +151,8 @@
     </footer>
     <script src="../js/theme.js"></script>
     <script src="../js/page.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/cookies.js"></script>
     
 </body>
 </html>

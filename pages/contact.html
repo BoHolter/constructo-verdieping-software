@@ -37,9 +37,9 @@
                     <ul class="nav-list" id="mainMenu">
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
+                        <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
                         <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
                     </ul>
@@ -59,7 +59,7 @@
         </div>
     </section>
 
-    <main>
+    <main id="main">
         <div class="container contact-layout">
             <aside class="contact-aside">
                 <span class="section-label" style="color:var(--muted)">Direct line</span>
@@ -92,67 +92,127 @@
             </aside>
 
             <section class="contact-form" aria-labelledby="formHeading">
-                <span class="section-label" style="color:var(--muted)">Request form</span>
-                <h2 id="formHeading">Send a brief</h2>
-                <p>A few details help us prepare a useful first response.</p>
-
-                <form id="contactForm" novalidate>
-                    <div class="form-row">
-                        <div>
-                            <label for="name">Full name</label>
-                            <input id="name" name="name" required autocomplete="name" placeholder="Your name" />
-                        </div>
-                        <div>
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
-                        </div>
+                <div id="formSuccess" class="form-success" hidden tabindex="-1">
+                    <span class="form-kicker">Request received</span>
+                    <h2>Thanks — we got your brief</h2>
+                    <p>This prototype validates your details in the browser only (nothing is emailed).</p>
+                    <p>On a live site we would reply within one business day with next steps.</p>
+                    <div class="form-actions">
+                        <button type="button" class="cta" id="sendAnother">Send another →</button>
+                        <a class="text-link" href="../Verdieping Software Prototype.html">Back to home</a>
                     </div>
+                </div>
 
-                    <div class="form-row">
-                        <div>
-                            <label for="phone">Phone (optional)</label>
-                            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+31 …" />
+                <div id="formWrap">
+                    <header class="form-head">
+                        <span class="form-kicker">Request form</span>
+                        <h2 id="formHeading">Send a brief</h2>
+                        <p>Share a few project details and we’ll prepare a useful first response.</p>
+                    </header>
+
+                    <p class="demo-note"><span>Prototype</span> Nothing is sent to a server — you’ll see a confirmation after a valid submit.</p>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="name">Full name</label>
+                                <input id="name" name="name" required autocomplete="name" placeholder="Your name" />
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
+                            </div>
                         </div>
-                        <div>
-                            <label for="projectType">Project type</label>
-                            <select id="projectType" name="projectType">
-                                <option>Renovation</option>
-                                <option>New Build</option>
-                                <option>Commercial Fit-out</option>
-                                <option>Project Management</option>
-                                <option>Other / not sure</option>
-                            </select>
+
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="phone">Phone <em>(optional)</em></label>
+                                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+31 6 1234 5678" />
+                            </div>
+                            <div class="field">
+                                <label for="projectType">Project type</label>
+                                <div class="select-wrap">
+                                    <select id="projectType" name="projectType">
+                                        <option>Renovation</option>
+                                        <option>New Build</option>
+                                        <option>Commercial Fit-out</option>
+                                        <option>Project Management</option>
+                                        <option>Careers</option>
+                                        <option>Other / not sure</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <label for="message">Project brief</label>
-                    <textarea id="message" name="message" rows="6" required placeholder="Location, timeline, scope, and anything else we should know"></textarea>
+                        <div class="field">
+                            <label for="message">Project brief</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Location, timeline, scope, and anything else we should know"></textarea>
+                        </div>
 
-                    <label for="pictures">Attach pictures (optional)</label>
-                    <input id="pictures" name="pictures" type="file" accept="image/*" multiple />
-                    <p class="file-hint">Site photos or inspiration help us respond faster.</p>
+                        <div class="field">
+                            <label for="pictures">Attachments <em>(optional)</em></label>
+                            <label class="file-attach" for="pictures">
+                                <input id="pictures" name="pictures" type="file" accept="image/*" multiple />
+                                <span class="file-attach-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <path d="M21.4 11.6 12.1 20.9a5.5 5.5 0 0 1-7.8-7.8l9.9-9.9a3.5 3.5 0 0 1 5 5l-9.9 9.8a1.5 1.5 0 0 1-2.1-2.1l8.5-8.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span class="file-attach-copy">
+                                    <span class="file-attach-title" id="fileDropTitle">Add site photos</span>
+                                    <span class="file-attach-meta" id="fileDropMeta">JPG or PNG · optional</span>
+                                </span>
+                                <span class="file-attach-btn">Browse</span>
+                            </label>
+                            <p class="file-hint">A few reference images help us respond faster.</p>
+                        </div>
 
-                    <button class="cta" type="submit">Send request →</button>
-                    <div id="formStatus" class="form-status" aria-live="polite"></div>
-                </form>
+                        <div class="form-actions">
+                            <button class="cta" type="submit">Send request →</button>
+                            <p class="form-sla">Typical reply within 1 business day</p>
+                        </div>
+                        <div id="formStatus" class="form-status" aria-live="polite"></div>
+                    </form>
+                </div>
             </section>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+            <div class="site-footer-grid">
+                <div>
+                    <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+                    <p>General contracting and renovations across Amsterdam and the Randstad.</p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <a href="process.html">How we work</a>
+                    <a href="testimonials.html">Reviews</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="projects.html">Projects</a>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="team.html">Team</a>
+                    <a href="careers.html">Careers</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="cookies.html">Cookies</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
             <div class="footer-inner">
                 <div>© <span id="year"></span> Constructo — Building with integrity.</div>
-                <div>
-                    <a href="../Verdieping Software Prototype.html">Home</a>
-                    · Tel: +31 20 123 4567 · info@constructo.example
-                </div>
+                <div>Tel: +31 20 123 4567 · info@constructo.example</div>
             </div>
         </div>
     </footer>
     <script src="../js/theme.js"></script>
     <script src="../js/page.js"></script>
-    
+    <script src="../js/cookies.js"></script>
 </body>
 </html>

@@ -37,9 +37,9 @@
                     <ul class="nav-list" id="mainMenu">
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
+                        <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
                         <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
                     </ul>
@@ -50,7 +50,7 @@
 
     <section class="page-hero">
         <div class="page-hero-media" aria-hidden="true">
-            <img src="../Rooftop-Terrace.jpg" alt="" />
+            <img src="../Rooftop-Terrace.jpg" alt="Project photo" />
         </div>
         <div class="page-hero-content">
             <span class="section-label">Residential · 2025</span>
@@ -59,7 +59,7 @@
         </div>
     </section>
 
-    <main class="container project-main">
+    <main class="container project-main" id="main">
         <div class="specs" aria-label="Project facts">
             <div><dt>Location</dt><dd>Amsterdam Oud-West</dd></div>
             <div><dt>Client</dt><dd>Apartment owners</dd></div>
@@ -92,9 +92,28 @@
                 <h3>Dreaming of a rooftop?</h3>
                 <p>We start with structure and waterproofing — then design the terrace you can actually live on.</p>
                 <a class="cta" href="contact.html?type=Renovation">Request a quote →</a>
-                <a class="back-link" href="../Verdieping Software Prototype.html#projects">← All projects</a>
+                <a class="back-link" href="projects.html">← All projects</a>
             </aside>
-        </div>
+        </div>        <section class="project-gallery" aria-labelledby="galHeading">
+            <h2 id="galHeading">Gallery</h2>
+            <div class="gallery-grid">
+                <a class="gallery-item" href="../Rooftop-Terrace.jpg" data-lightbox data-full="../Rooftop-Terrace.jpg" data-caption="Terrace after">
+                    <span class="gallery-badge">After</span>
+                    <img src="../Rooftop-Terrace.jpg" alt="Finished rooftop terrace at dusk" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../gallery-garden-before.jpg" data-lightbox data-full="../gallery-garden-before.jpg" data-caption="Roof before">
+                    <span class="gallery-badge">Before</span>
+                    <img src="../gallery-garden-before.jpg" alt="Bare roof area before terrace works" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../gallery-garden-after.jpg" data-lightbox data-full="../gallery-garden-after.jpg" data-caption="Planting">
+                    <img src="../gallery-garden-after.jpg" alt="Rooftop planting and seating" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../Coastal.jpg" data-lightbox data-full="../Coastal.jpg" data-caption="Building context">
+                    <img src="../Coastal.jpg" alt="Apartment building context for terrace" loading="lazy" />
+                </a>
+            </div>
+        </section>
+
 
         <section class="related" aria-labelledby="relatedHeading">
             <h2 id="relatedHeading">More projects</h2>
@@ -120,6 +139,11 @@
                 <div>© <span id="year"></span> Constructo — Building with integrity.</div>
                 <div>
                     <a href="contact.html">Contact</a>
+                    · <a href="process.html">Process</a>
+                    · <a href="faq.html">FAQ</a>
+                    · <a href="privacy.html">Privacy</a>
+                    · <a href="cookies.html">Cookies</a>
+                    · <a href="terms.html">Terms</a>
                     · Tel: +31 20 123 4567
                 </div>
             </div>
@@ -127,5 +151,7 @@
     </footer>
     <script src="../js/theme.js"></script>
     <script src="../js/page.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/cookies.js"></script>
 </body>
 </html>

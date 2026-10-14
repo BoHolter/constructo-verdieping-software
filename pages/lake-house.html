@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Lake House — Constructo</title>
+    <meta name="description" content="Lake House new build in Loosdrecht by Constructo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="page-hero">
+        <div class="page-hero-media"><img src="../Lake-House.jpg" alt="Lake House project exterior" /></div>
+        <div class="page-hero-content">
+            <span class="section-label">Residential · 2024</span>
+            <h1>Lake House</h1>
+            <p>A year-round waterside home with open living, guest suite, and a rebuilt dock.</p>
+        </div>
+    </section>
+    <main class="container project-main" id="main">
+        <div class="specs" aria-label="Project facts">
+            <div><dt>Location</dt><dd>Loosdrecht</dd></div>
+            <div><dt>Client</dt><dd>Couple</dd></div>
+            <div><dt>Size</dt><dd>186 m²</dd></div>
+            <div><dt>Duration</dt><dd>10 months</dd></div>
+            <div><dt>Year</dt><dd>2024</dd></div>
+            <div><dt>Budget</dt><dd>€510k – €560k</dd></div>
+        </div>
+        <div class="project-layout">
+            <article class="project-copy">
+                <h2>The brief</h2>
+                <p>Replace a tired weekend cabin with a year-round lake house: open living to the water, a guest suite, and a dock that survives winter storms.</p>
+                <h2>What we built</h2>
+                <p>Timber-frame structure on upgraded foundations, triple glazing facing the lake, and a covered terrace. Services were routed for heat pump and future EV charging at the driveway.</p>
+                <h2>Detail notes</h2>
+                <p>Flood-aware detailing and corrosion-resistant fixings were specified for the dock. The guest suite can close off for privacy without losing the main view corridor.</p>
+                <ul class="feature-list">
+                    <li>Lake-facing living with flush threshold</li>
+                    <li>Guest suite and covered terrace</li>
+                    <li>Rebuilt timber dock</li>
+                    <li>Heat pump ready plant room</li>
+                </ul>
+            </article>
+            <aside class="project-aside">
+                <h3>Waterside build?</h3>
+                <p>We plan structure, moisture, and permits before the first pile goes in.</p>
+                <a class="cta" href="contact.html?type=New%20Build">Request a quote →</a>
+                <a class="back-link" href="projects.html">← All projects</a>
+            </aside>
+        </div>
+        <section class="project-gallery" aria-labelledby="galHeading">
+            <h2 id="galHeading">Gallery</h2>
+            <div class="gallery-grid">
+                <a class="gallery-item" href="../Lake-House.jpg" data-lightbox data-full="../Lake-House.jpg" data-caption="Lake house exterior">
+                    <img src="../Lake-House.jpg" alt="Lake house exterior on the waterfront" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../gallery-kitchen-before.jpg" data-lightbox data-full="../gallery-kitchen-before.jpg" data-caption="Cabin kitchen before">
+                    <span class="gallery-badge">Before</span>
+                    <img src="../gallery-kitchen-before.jpg" alt="Dated cabin kitchen before rebuild" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../gallery-kitchen-after.jpg" data-lightbox data-full="../gallery-kitchen-after.jpg" data-caption="Kitchen after">
+                    <span class="gallery-badge">After</span>
+                    <img src="../gallery-kitchen-after.jpg" alt="Modern kitchen after lake house build" loading="lazy" />
+                </a>
+                <a class="gallery-item" href="../Rooftop-Terrace.jpg" data-lightbox data-full="../Rooftop-Terrace.jpg" data-caption="Terrace living">
+                    <img src="../Rooftop-Terrace.jpg" alt="Covered terrace seating at dusk" loading="lazy" />
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="site-footer-grid">
+                <div><a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a><p>General contracting and renovations across Amsterdam and the Randstad.</p></div>
+                <div><h4>Explore</h4><a href="projects.html">Projects</a><a href="process.html">How we work</a><a href="faq.html">FAQ</a></div>
+                <div><h4>Company</h4><a href="about.html">About</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div>
+                <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a></div>
+            </div>
+            <div class="footer-inner"><div>© <span id="year"></span> Constructo</div><div>Prototype for Verdieping Software</div></div>
+        </div>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/cookies.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Projects — Constructo</title>
-    <meta name="description" content="Selected Constructo projects — renovations, offices, and residential builds." />
+    <meta name="description" content="Browse all Constructo house and commercial projects — filter by type and open detailed case pages." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
@@ -36,10 +36,10 @@
                     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
                     <ul class="nav-list" id="mainMenu">
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="projects.html" aria-current="page">Projects</a></li>
+                        <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
                         <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
                     </ul>
@@ -49,30 +49,68 @@
     </header>
 
     <section class="page-hero">
-        <div class="page-hero-media" aria-hidden="true">
-            <img src="../Urban%20Loft%20Revamp.jpg" alt="" />
+        <div class="page-hero-media">
+            <img src="../Urban%20Loft%20Revamp.jpg" alt="Constructo project portfolio overview" />
         </div>
         <div class="page-hero-content">
             <span class="section-label">Portfolio</span>
             <h1>Projects</h1>
-            <p>Recent residential and commercial work across the region.</p>
+            <p>Detailed case pages for every build — filter by type and open the full story.</p>
         </div>
     </section>
 
-    <main class="container">
+    <main class="container" id="main">
         <section class="page-block">
             <div class="page-intro">
                 <span class="section-label">Selected work</span>
-                <h2>Projects with proof</h2>
-                <p>Recent residential and commercial work across the region.</p>
+                <h2>All houses &amp; builds</h2>
+                <p>Select a project to see the brief, specs, gallery, and before/after photos.</p>
             </div>
+
+            <div class="project-filters" role="group" aria-label="Filter projects">
+                <button type="button" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" data-filter="residential" aria-pressed="false">Residential</button>
+                <button type="button" data-filter="commercial" aria-pressed="false">Commercial</button>
+                <button type="button" data-filter="interior" aria-pressed="false">Interior</button>
+            </div>
+
             <div class="projects-index">
-                <a href="urban-loft-revamp.html"><div class="media"><img src="../Urban%20Loft%20Revamp.jpg" alt="" loading="lazy" /></div><div class="body"><strong>Urban Loft Revamp</strong><span class="tag">Interior · 2024</span></div></a>
-                <a href="coastal-office.html"><div class="media"><img src="../Coastal.jpg" alt="" loading="lazy" /></div><div class="body"><strong>Coastal Office</strong><span class="tag">Commercial · 2023</span></div></a>
-                <a href="family-home.html"><div class="media"><img src="../Home%20Extestion.jpg" alt="" loading="lazy" /></div><div class="body"><strong>Family Home</strong><span class="tag">Residential · 2024</span></div></a>
-                <a href="canal-townhouse.html"><div class="media"><img src="../Canal-Townhouse.jpg" alt="" loading="lazy" /></div><div class="body"><strong>Canal Townhouse</strong><span class="tag">Residential · 2025</span></div></a>
-                <a href="garden-pavilion.html"><div class="media"><img src="../Garden-Pavilion.jpg" alt="" loading="lazy" /></div><div class="body"><strong>Garden Pavilion</strong><span class="tag">Residential · 2024</span></div></a>
-                <a href="rooftop-terrace.html"><div class="media"><img src="../Rooftop-Terrace.jpg" alt="" loading="lazy" /></div><div class="body"><strong>Rooftop Terrace</strong><span class="tag">Residential · 2025</span></div></a>
+                <a class="project-card" data-category="interior" href="urban-loft-revamp.html">
+                    <div class="media"><img src="../Urban%20Loft%20Revamp.jpg" alt="Urban Loft Revamp interior" loading="lazy" /></div>
+                    <div class="body"><strong>Urban Loft Revamp</strong><span class="tag">Interior · 2024</span></div>
+                </a>
+                <a class="project-card" data-category="commercial" href="coastal-office.html">
+                    <div class="media"><img src="../Coastal.jpg" alt="Coastal Office exterior" loading="lazy" /></div>
+                    <div class="body"><strong>Coastal Office</strong><span class="tag">Commercial · 2023</span></div>
+                </a>
+                <a class="project-card" data-category="residential" href="family-home.html">
+                    <div class="media"><img src="../Home%20Extestion.jpg" alt="Family Home extension" loading="lazy" /></div>
+                    <div class="body"><strong>Family Home</strong><span class="tag">Residential · 2024</span></div>
+                </a>
+                <a class="project-card" data-category="residential" href="canal-townhouse.html">
+                    <div class="media"><img src="../Canal-Townhouse.jpg" alt="Canal Townhouse façade" loading="lazy" /></div>
+                    <div class="body"><strong>Canal Townhouse</strong><span class="tag">Residential · 2025</span></div>
+                </a>
+                <a class="project-card" data-category="residential" href="garden-pavilion.html">
+                    <div class="media"><img src="../Garden-Pavilion.jpg" alt="Garden Pavilion studio" loading="lazy" /></div>
+                    <div class="body"><strong>Garden Pavilion</strong><span class="tag">Residential · 2024</span></div>
+                </a>
+                <a class="project-card" data-category="residential" href="rooftop-terrace.html">
+                    <div class="media"><img src="../Rooftop-Terrace.jpg" alt="Rooftop Terrace living" loading="lazy" /></div>
+                    <div class="body"><strong>Rooftop Terrace</strong><span class="tag">Residential · 2025</span></div>
+                </a>
+                <a class="project-card" data-category="residential" href="brick-courtyard.html">
+                    <div class="media"><img src="../Brick-Courtyard.jpg" alt="Brick Courtyard house" loading="lazy" /></div>
+                    <div class="body"><strong>Brick Courtyard</strong><span class="tag">Residential · 2025</span></div>
+                </a>
+                <a class="project-card" data-category="residential" href="lake-house.html">
+                    <div class="media"><img src="../Lake-House.jpg" alt="Lake House on the water" loading="lazy" /></div>
+                    <div class="body"><strong>Lake House</strong><span class="tag">Residential · 2024</span></div>
+                </a>
+                <a class="project-card" data-category="interior" href="warehouse-loft.html">
+                    <div class="media"><img src="../Warehouse-Loft.jpg" alt="Warehouse Loft conversion" loading="lazy" /></div>
+                    <div class="body"><strong>Warehouse Loft</strong><span class="tag">Interior · 2025</span></div>
+                </a>
             </div>
         </section>
     </main>
@@ -96,20 +134,20 @@
                     <h4>Explore</h4>
                     <a href="services.html">Services</a>
                     <a href="projects.html">Projects</a>
-                    <a href="team.html">Team</a>
-                    <a href="careers.html">Careers</a>
+                    <a href="process.html">How we work</a>
+                    <a href="faq.html">FAQ</a>
                 </div>
                 <div>
                     <h4>Company</h4>
                     <a href="about.html">About</a>
+                    <a href="team.html">Team</a>
                     <a href="contact.html">Contact</a>
-                    <a href="../Verdieping Software Prototype.html">Home</a>
                 </div>
                 <div>
-                    <h4>Contact</h4>
-                    <a href="mailto:info@constructo.example">info@constructo.example</a>
-                    <a href="tel:+31201234567">+31 20 123 4567</a>
-                    <span style="color:var(--muted);font-weight:600">Amsterdam · NL</span>
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="cookies.html">Cookies</a>
+                    <a href="terms.html">Terms</a>
                 </div>
             </div>
             <div class="footer-inner">
@@ -120,5 +158,6 @@
     </footer>
     <script src="../js/theme.js"></script>
     <script src="../js/page.js"></script>
+    <script src="../js/cookies.js"></script>
 </body>
 </html>
