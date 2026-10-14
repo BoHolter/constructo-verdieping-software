@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Coastal Office — Constructo</title>
+    <meta name="description" content="Coastal Office fit-out in Zandvoort — an open-plan workspace with sustainable materials by Constructo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-media" aria-hidden="true">
+            <img src="../Coastal.jpg" alt="" />
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label">Commercial · 2023</span>
+            <h1>Coastal Office</h1>
+            <p>An open-plan headquarters overlooking the North Sea — built for a 40-person digital studio that wanted light, calm, and low energy use.</p>
+        </div>
+    </section>
+
+    <main class="container project-main">
+        <div class="specs" aria-label="Project facts">
+            <div><dt>Location</dt><dd>Zandvoort</dd></div>
+            <div><dt>Client</dt><dd>Tide &amp; Co. Studio</dd></div>
+            <div><dt>Size</dt><dd>620 m²</dd></div>
+            <div><dt>Duration</dt><dd>5 months</dd></div>
+            <div><dt>Year</dt><dd>2023</dd></div>
+            <div><dt>Budget</dt><dd>€780k – €820k</dd></div>
+        </div>
+
+        <div class="project-layout">
+            <article class="project-copy">
+                <h2>The brief</h2>
+                <p>Tide &amp; Co. needed a coastal HQ that felt more like a gallery than a cubicle farm. The shell was a 1990s office with low ceilings and dated finishes. The goal: strip it back, open the floor plate, and pull daylight deep into the plan.</p>
+
+                <h2>What we built</h2>
+                <p>We removed two internal load walls (with engineered steel beams), raised the reception volume, and installed a continuous timber reception desk facing the dunes. Meeting rooms sit behind acoustic glass so the sea view stays shared.</p>
+                <p>Energy work included a heat-pump retrofit, LED throughout, and solar on the flat roof. Materials stay honest: white oiled ash, polished concrete, and recycled wool acoustic panels.</p>
+
+                <h2>Highlights</h2>
+                <ul class="feature-list">
+                    <li>Open-plan workspace for 40 desks with quiet pods</li>
+                    <li>Curved ash reception desk made on-site</li>
+                    <li>Triple-glazed sea-facing curtain wall upgrade</li>
+                    <li>Heat pump + rooftop PV array</li>
+                    <li>Two client suites with acoustic glass partitions</li>
+                </ul>
+            </article>
+
+            <aside class="project-aside">
+                <h3>Planning a fit-out?</h3>
+                <p>We manage commercial interiors from strip-out to furniture install — one contract, one schedule.</p>
+                <a class="cta" href="contact.html?type=Commercial%20Fit-out">Request a quote →</a>
+                <a class="back-link" href="../Verdieping Software Prototype.html#projects">← All projects</a>
+            </aside>
+        </div>
+
+        <section class="related" aria-labelledby="relatedHeading">
+            <h2 id="relatedHeading">More projects</h2>
+            <div class="related-grid">
+                <a class="related-card" href="rooftop-terrace.html">
+                    <img src="../Rooftop-Terrace.jpg" alt="Rooftop Terrace" loading="lazy" />
+                    <strong>Rooftop Terrace</strong>
+                    <span>Residential · 2025</span>
+                </a>
+                <a class="related-card" href="canal-townhouse.html">
+                    <img src="../Canal-Townhouse.jpg" alt="Canal Townhouse" loading="lazy" />
+                    <strong>Canal Townhouse</strong>
+                    <span>Residential · 2025</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+            <div class="footer-inner">
+                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
+                <div>
+                    <a href="contact.html">Contact</a>
+                    · Tel: +31 20 123 4567
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+    
+</body>
+</html>

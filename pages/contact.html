@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Get in Touch — Constructo</title>
+    <meta name="description" content="Contact Constructo for your construction and renovation needs. Get a quote or send us your project details." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero" aria-label="Contact Constructo">
+        <div class="page-hero-media" aria-hidden="true">
+            <img src="../Constructo.png" alt="" />
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label">Contact</span>
+            <h1>Get in touch</h1>
+            <p>Ready to start your project? Send the details and we’ll get back to you promptly.</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="container contact-layout">
+            <aside class="contact-aside">
+                <span class="section-label" style="color:var(--muted)">Direct line</span>
+                <h2>Let’s talk about your build</h2>
+                <p>Whether it’s a renovation, new build, or commercial fit-out — tell us what you need and we’ll follow up with next steps.</p>
+
+                <dl class="contact-details">
+                    <div>
+                        <dt>Email</dt>
+                        <dd><a href="mailto:info@constructo.example">info@constructo.example</a></dd>
+                    </div>
+                    <div>
+                        <dt>Phone</dt>
+                        <dd><a href="tel:+31201234567">+31 20 123 4567</a></dd>
+                    </div>
+                    <div>
+                        <dt>Office</dt>
+                        <dd>Amsterdam, Netherlands</dd>
+                    </div>
+                    <div>
+                        <dt>Hours</dt>
+                        <dd>Mon–Fri, 08:00–17:30</dd>
+                    </div>
+                </dl>
+
+                <div class="aside-photo">
+                    <img src="../team.jpg" alt="Constructo team" loading="lazy" />
+                </div>
+                <a class="back-link" href="../Verdieping Software Prototype.html">← Back to home</a>
+            </aside>
+
+            <section class="contact-form" aria-labelledby="formHeading">
+                <span class="section-label" style="color:var(--muted)">Request form</span>
+                <h2 id="formHeading">Send a brief</h2>
+                <p>A few details help us prepare a useful first response.</p>
+
+                <form id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div>
+                            <label for="name">Full name</label>
+                            <input id="name" name="name" required autocomplete="name" placeholder="Your name" />
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="phone">Phone (optional)</label>
+                            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+31 …" />
+                        </div>
+                        <div>
+                            <label for="projectType">Project type</label>
+                            <select id="projectType" name="projectType">
+                                <option>Renovation</option>
+                                <option>New Build</option>
+                                <option>Commercial Fit-out</option>
+                                <option>Project Management</option>
+                                <option>Other / not sure</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="message">Project brief</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Location, timeline, scope, and anything else we should know"></textarea>
+
+                    <label for="pictures">Attach pictures (optional)</label>
+                    <input id="pictures" name="pictures" type="file" accept="image/*" multiple />
+                    <p class="file-hint">Site photos or inspiration help us respond faster.</p>
+
+                    <button class="cta" type="submit">Send request →</button>
+                    <div id="formStatus" class="form-status" aria-live="polite"></div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+            <div class="footer-inner">
+                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
+                <div>
+                    <a href="../Verdieping Software Prototype.html">Home</a>
+                    · Tel: +31 20 123 4567 · info@constructo.example
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+    
+</body>
+</html>

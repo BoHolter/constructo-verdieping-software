@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Family Home — Constructo</title>
+    <meta name="description" content="Family Home extension in Amstelveen — a two-story addition with landscaping and modern finishes by Constructo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-media" aria-hidden="true">
+            <img src="../Home%20Extestion.jpg" alt="" />
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label">Residential · 2024</span>
+            <h1>Family Home</h1>
+            <p>A two-story rear extension in Amstelveen that connects kitchen, garden, and upstairs bedrooms without losing the character of the original brick house.</p>
+        </div>
+    </section>
+
+    <main class="container project-main">
+        <div class="specs" aria-label="Project facts">
+            <div><dt>Location</dt><dd>Amstelveen</dd></div>
+            <div><dt>Client</dt><dd>Family of five</dd></div>
+            <div><dt>Size</dt><dd>+94 m² extension</dd></div>
+            <div><dt>Duration</dt><dd>9 months</dd></div>
+            <div><dt>Year</dt><dd>2024</dd></div>
+            <div><dt>Budget</dt><dd>€310k – €345k</dd></div>
+        </div>
+
+        <div class="project-layout">
+            <article class="project-copy">
+                <h2>The brief</h2>
+                <p>The family had outgrown a 1970s corner house. They wanted a larger kitchen-diner that opened to the garden, two extra bedrooms upstairs, and a covered patio for Dutch winters — without making the street façade look like a new build.</p>
+
+                <h2>What we built</h2>
+                <p>Constructo delivered a two-story timber-frame extension clad in matching brick and dark aluminium windows. The ground floor opens with a 6-metre sliding system; upstairs holds a primary suite and a kids’ room with built-in storage.</p>
+                <p>Landscaping was part of the contract: stepped planting beds, permeable paving, and a small rain garden that handles roof runoff. The family stayed in the front of the house for most of the build thanks to a temporary weather seal between old and new.</p>
+
+                <h2>Highlights</h2>
+                <ul class="feature-list">
+                    <li>Two-story rear extension with flush brick detailing</li>
+                    <li>6 m aluminium sliding doors to the garden</li>
+                    <li>Primary suite with walk-in wardrobe</li>
+                    <li>Covered cedar patio and outdoor kitchen stub-outs</li>
+                    <li>Integrated landscaping and rain garden</li>
+                </ul>
+            </article>
+
+            <aside class="project-aside">
+                <h3>Thinking about an extension?</h3>
+                <p>We’ll map permits, structure, and a fixed price before any demolition starts.</p>
+                <a class="cta" href="contact.html?type=New%20Build">Request a quote →</a>
+                <a class="back-link" href="../Verdieping Software Prototype.html#projects">← All projects</a>
+            </aside>
+        </div>
+
+        <section class="related" aria-labelledby="relatedHeading">
+            <h2 id="relatedHeading">More projects</h2>
+            <div class="related-grid">
+                <a class="related-card" href="garden-pavilion.html">
+                    <img src="../Garden-Pavilion.jpg" alt="Garden Pavilion" loading="lazy" />
+                    <strong>Garden Pavilion</strong>
+                    <span>Residential · 2024</span>
+                </a>
+                <a class="related-card" href="canal-townhouse.html">
+                    <img src="../Canal-Townhouse.jpg" alt="Canal Townhouse" loading="lazy" />
+                    <strong>Canal Townhouse</strong>
+                    <span>Residential · 2025</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+            <div class="footer-inner">
+                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
+                <div>
+                    <a href="contact.html">Contact</a>
+                    · Tel: +31 20 123 4567
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+    
+</body>
+</html>

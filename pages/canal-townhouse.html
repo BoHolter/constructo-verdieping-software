@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Canal Townhouse — Constructo</title>
+    <meta name="description" content="Canal Townhouse renovation in Amsterdam Jordaan — facade restore, open plan living, and canal-facing glazing by Constructo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-media" aria-hidden="true">
+            <img src="../Canal-Townhouse.jpg" alt="" />
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label">Residential · 2025</span>
+            <h1>Canal Townhouse</h1>
+            <p>A full gut renovation of a Jordaan canal house — restored brick façade, open living floors, and quiet modern systems behind period detailing.</p>
+        </div>
+    </section>
+
+    <main class="container project-main">
+        <div class="specs" aria-label="Project facts">
+            <div><dt>Location</dt><dd>Amsterdam Jordaan</dd></div>
+            <div><dt>Client</dt><dd>Private owners</dd></div>
+            <div><dt>Size</dt><dd>168 m²</dd></div>
+            <div><dt>Duration</dt><dd>11 months</dd></div>
+            <div><dt>Year</dt><dd>2025</dd></div>
+            <div><dt>Budget</dt><dd>€420k – €465k</dd></div>
+        </div>
+
+        <div class="project-layout">
+            <article class="project-copy">
+                <h2>The brief</h2>
+                <p>The owners bought a narrow three-story canal house with great bones and a tired interior. They wanted daylight on every floor, a kitchen that faced the water, and enough structure work to future-proof the stairs and floors — without losing the street character.</p>
+
+                <h2>What we built</h2>
+                <p>Constructo restored the brick façade and canal-facing joinery, rebuilt the middle floor as an open living level, and upgraded insulation and heating behind timber linings. New black aluminium windows match the original rhythm while meeting current energy targets.</p>
+                <p>A discreet lift shaft was prepared for later install, and the attic became a quiet primary suite with a glazed dormer that stays invisible from the canal path.</p>
+
+                <h2>Highlights</h2>
+                <ul class="feature-list">
+                    <li>Façade restore with matched historic brick</li>
+                    <li>Open-plan living floor with canal outlook</li>
+                    <li>Structural floor reinforcement and new stair core</li>
+                    <li>Hidden MVHR and underfloor heating</li>
+                    <li>Primary suite in the attic with glazed dormer</li>
+                </ul>
+            </article>
+
+            <aside class="project-aside">
+                <h3>Renovating a canal house?</h3>
+                <p>We handle permits, heritage constraints, and a fixed scope before strip-out begins.</p>
+                <a class="cta" href="contact.html?type=Renovation">Request a quote →</a>
+                <a class="back-link" href="../Verdieping Software Prototype.html#projects">← All projects</a>
+            </aside>
+        </div>
+
+        <section class="related" aria-labelledby="relatedHeading">
+            <h2 id="relatedHeading">More projects</h2>
+            <div class="related-grid">
+                <a class="related-card" href="garden-pavilion.html">
+                    <img src="../Garden-Pavilion.jpg" alt="Garden Pavilion" loading="lazy" />
+                    <strong>Garden Pavilion</strong>
+                    <span>Residential · 2024</span>
+                </a>
+                <a class="related-card" href="rooftop-terrace.html">
+                    <img src="../Rooftop-Terrace.jpg" alt="Rooftop Terrace" loading="lazy" />
+                    <strong>Rooftop Terrace</strong>
+                    <span>Residential · 2025</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+            <div class="footer-inner">
+                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
+                <div>
+                    <a href="contact.html">Contact</a>
+                    · Tel: +31 20 123 4567
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Garden Pavilion — Constructo</title>
+    <meta name="description" content="Garden Pavilion in Haarlem — a timber-and-glass backyard studio with patio and planting by Constructo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-media" aria-hidden="true">
+            <img src="../Garden-Pavilion.jpg" alt="" />
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label">Residential · 2024</span>
+            <h1>Garden Pavilion</h1>
+            <p>A freestanding timber-and-glass studio at the end of a Haarlem garden — workspace by day, guest room by night, built to feel like part of the landscape.</p>
+        </div>
+    </section>
+
+    <main class="container project-main">
+        <div class="specs" aria-label="Project facts">
+            <div><dt>Location</dt><dd>Haarlem</dd></div>
+            <div><dt>Client</dt><dd>Couple + home office</dd></div>
+            <div><dt>Size</dt><dd>38 m² pavilion</dd></div>
+            <div><dt>Duration</dt><dd>4 months</dd></div>
+            <div><dt>Year</dt><dd>2024</dd></div>
+            <div><dt>Budget</dt><dd>€95k – €110k</dd></div>
+        </div>
+
+        <div class="project-layout">
+            <article class="project-copy">
+                <h2>The brief</h2>
+                <p>Working from home had taken over the dining table. The clients wanted a quiet backyard pavilion with power, fibre, and a pull-out daybed for guests — without eating the whole garden or triggering a heavy permit path.</p>
+
+                <h2>What we built</h2>
+                <p>Constructo delivered a prefabricated timber frame clad in vertical cedar, with triple glazing on the garden side and a solid rear wall for neighbours. A gravel patio and low planting beds stitch the pavilion back to the main house path.</p>
+                <p>Services run underground from the house: electrics, data, and a compact heat pump. The roof carries sedum for runoff and a cleaner skyline from the upstairs bedrooms.</p>
+
+                <h2>Highlights</h2>
+                <ul class="feature-list">
+                    <li>Prefabricated timber frame, assembled on site in five days</li>
+                    <li>Full-height garden glazing with hidden blinds</li>
+                    <li>Integrated desk wall and guest daybed niche</li>
+                    <li>Sedum roof and permeable patio</li>
+                    <li>Permit-light footprint under local rules</li>
+                </ul>
+            </article>
+
+            <aside class="project-aside">
+                <h3>Need a garden studio?</h3>
+                <p>We design compact pavilions that stay warm, quiet, and neighbour-friendly.</p>
+                <a class="cta" href="contact.html?type=New%20Build">Request a quote →</a>
+                <a class="back-link" href="../Verdieping Software Prototype.html#projects">← All projects</a>
+            </aside>
+        </div>
+
+        <section class="related" aria-labelledby="relatedHeading">
+            <h2 id="relatedHeading">More projects</h2>
+            <div class="related-grid">
+                <a class="related-card" href="family-home.html">
+                    <img src="../Home%20Extestion.jpg" alt="Family Home" loading="lazy" />
+                    <strong>Family Home</strong>
+                    <span>Residential · 2024</span>
+                </a>
+                <a class="related-card" href="canal-townhouse.html">
+                    <img src="../Canal-Townhouse.jpg" alt="Canal Townhouse" loading="lazy" />
+                    <strong>Canal Townhouse</strong>
+                    <span>Residential · 2025</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+            <div class="footer-inner">
+                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
+                <div>
+                    <a href="contact.html">Contact</a>
+                    · Tel: +31 20 123 4567
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+</body>
+</html>

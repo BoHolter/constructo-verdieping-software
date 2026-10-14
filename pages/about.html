@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>About — Constructo</title>
+    <meta name="description" content="About Constructo — Amsterdam construction and renovation studio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../Verdieping Software Prototype.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-media" aria-hidden="true">
+            <img src="../Constructo.png" alt="" />
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label">Studio · About</span>
+            <h1>About us</h1>
+            <p>A construction firm that values clear pricing, reliable schedules, and craftsmanship you can trust.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="page-block">
+            <div class="page-intro">
+                <span class="section-label">Studio</span>
+                <h2>About Constructo</h2>
+                <p>We are a multi-disciplinary construction firm for residential and commercial clients in Amsterdam and the wider Randstad.</p>
+            </div>
+            <div class="split-facts" style="margin-bottom:36px">
+                <div><strong>2014</strong><span>Founded in Amsterdam</span></div>
+                <div><strong>40+</strong><span>Completed projects</span></div>
+                <div><strong>€0</strong><span>Hidden change orders*</span></div>
+                <div><strong>A</strong><span>Safety rating mindset</span></div>
+            </div>
+            <p style="color:var(--muted);max-width:68ch;margin:0 0 12px">Our approach is simple: fixed-price quoting when the scope is clear, weekly site updates, and finishing that matches the drawings. We work with licensed trades and design partners so structure, services, and interiors stay aligned.</p>
+            <p style="color:var(--muted);max-width:68ch;margin:0;font-size:0.9rem">*We flag extras early and only proceed with written approval.</p>
+        </section>
+    </main>
+
+    <section class="cta-band">
+        <div class="container">
+            <h2>Ready to build?</h2>
+            <p>Tell us about your project — renovations, new builds, or commercial fit-outs.</p>
+            <a class="cta" href="contact.html">Get in touch →</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="site-footer-grid">
+                <div>
+                    <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+                    <p>General contracting and renovations across Amsterdam and the Randstad.</p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <a href="services.html">Services</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="careers.html">Careers</a>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="../Verdieping Software Prototype.html">Home</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:info@constructo.example">info@constructo.example</a>
+                    <a href="tel:+31201234567">+31 20 123 4567</a>
+                    <span style="color:var(--muted);font-weight:600">Amsterdam · NL</span>
+                </div>
+            </div>
+            <div class="footer-inner">
+                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
+                <div>Prototype for Verdieping Software</div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page.js"></script>
+</body>
+</html>
