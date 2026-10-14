@@ -152,6 +152,17 @@ a { color: inherit }
     transition: transform .2s ease, filter .2s ease;
 }
 .cta:hover { filter: brightness(1.05); transform: translateY(-1px) }
+.cta-secondary {
+    background: transparent !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--line);
+}
+.cta-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent) !important;
+    filter: none;
+    background: transparent !important;
+}
 .theme-toggle,
 .menu-toggle {
     background: transparent;

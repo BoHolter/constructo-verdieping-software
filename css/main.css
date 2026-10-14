@@ -168,6 +168,27 @@ a { color: inherit }
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 .cta-ghost:hover { background: rgba(255, 255, 255, 0.08); filter: none }
+/* Outline CTA for light/dark content sections (not on dark hero/intro) */
+.cta-secondary {
+    background: transparent !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--line);
+    box-shadow: none;
+}
+.cta-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent) !important;
+    filter: none;
+    background: transparent !important;
+}
+html.dark .cta-secondary {
+    color: var(--ink) !important;
+    border-color: var(--line);
+}
+html.dark .cta-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent) !important;
+}
 .theme-toggle,
 .menu-toggle {
     background: transparent;

@@ -25,10 +25,11 @@
         }
 
         document.querySelectorAll("#themeToggle, [data-theme-toggle]").forEach((btn) => {
-            btn.textContent = isDark ? "☾" : "☀";
+            // Show the mode you can switch TO
+            btn.textContent = isDark ? "☀" : "☾";
             btn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
             btn.setAttribute("aria-pressed", String(isDark));
-            btn.title = isDark ? "Light mode" : "Dark mode";
+            btn.title = isDark ? "Switch to light mode" : "Switch to dark mode";
         });
     }
 
@@ -43,6 +44,8 @@
     applyTheme(preferredTheme(), { animate: false });
 
     document.querySelectorAll("#themeToggle, [data-theme-toggle]").forEach((btn) => {
+        if (btn.dataset.themeBound === "1") return;
+        btn.dataset.themeBound = "1";
         btn.addEventListener("click", () => {
             const next = document.documentElement.classList.contains("dark") ? "light" : "dark";
             setTheme(next, { animate: true });
