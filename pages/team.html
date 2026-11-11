@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Team — Constructo</title>
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../favicon.png" type="image/png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180" />
-    <meta name="description" content="Meet the Constructo crew — site managers, project leads, and design partners." />
+    <title>Team � Constructo</title>
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" sizes="180x180" />
+    <meta name="description" content="Meet the Constructo crew � site managers, project leads, and design partners." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=9" />
     <script src="../js/scrollbar.js" defer></script>
     <link rel="stylesheet" href="../css/project.css" />
     <script>
@@ -25,26 +25,36 @@
                 document.documentElement.dataset.theme = t;
             } catch (e) {}
         })();
+        (function () {
+            try {
+                var l = localStorage.getItem("constructoLang");
+                if (l === "nl" || l === "en") {
+                    document.documentElement.lang = l;
+                    document.documentElement.dataset.lang = l;
+                }
+            } catch (e) {}
+        })();
     </script>
 </head>
 <body>
     <header class="site-header">
         <div class="container nav">
-            <a class="brand" href="../Verdieping Software Prototype.html">
+            <a class="brand" href="../index.html">
                 <span class="logo" aria-hidden="true">CS</span>
                 <span>Constructo</span>
             </a>
             <nav aria-label="Main navigation">
                 <div class="nav-controls">
-                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">?</button>
                     <ul class="nav-list" id="mainMenu">
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
+                        <li><a href="style-quiz.html">Quiz</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
-                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">?</button></li>
                     </ul>
                 </div>
             </nav>
@@ -53,10 +63,10 @@
 
     <section class="page-hero">
         <div class="page-hero-media" aria-hidden="true">
-            <img src="../team.jpg" alt="" />
+            <img src="../img/team.jpg" alt="" />
         </div>
         <div class="page-hero-content">
-            <span class="section-label">Studio · People</span>
+            <span class="section-label">Studio � People</span>
             <h1>Our team</h1>
             <p>Experienced builders and planners who treat every site like it is their own.</p>
         </div>
@@ -70,43 +80,133 @@
                 <p>Site managers, trades leads, and design partners who keep projects safe, clear, and on schedule.</p>
             </div>
             <div class="people-grid">
-                <article class="person">
-                    <div class="person-photo"><img src="../team-bo-ceo.jpg" alt="Bo Holter" loading="lazy" /></div>
+                <article class="person person--lead">
+                    <div class="person-photo"><img src="../img/team-bo-ceo.jpg" alt="Bo Holter" loading="eager" fetchpriority="high" /></div>
                     <div class="person-body">
                         <strong>Bo Holter</strong>
                         <div class="person-role">CEO &amp; Website manager</div>
-                        <p>Leads Constructo’s direction, client relationships, and the digital presence of the studio.</p>
+                        <p>Leads Constructo�s direction, client relationships, and the digital presence of the studio. Sets the tone for how we bid, build, and hand over � and keeps the studio visible online.</p>
                     </div>
                 </article>
-                <article class="person">
-                    <div class="person-photo"><img src="../team-mira.jpg" alt="Mira de Boer" loading="lazy" /></div>
+
+                <article class="person person--senior">
+                    <div class="person-photo"><img src="../img/team-mira.jpg" alt="Mira de Boer" loading="lazy" /></div>
                     <div class="person-body">
                         <strong>Mira de Boer</strong>
                         <div class="person-role">Site manager</div>
                         <p>Runs day-to-day site coordination, safety walks, and client updates on residential builds.</p>
                     </div>
                 </article>
-                <article class="person">
-                    <div class="person-photo"><img src="../team-jonas.jpg" alt="Jonas Vermeer" loading="lazy" /></div>
+                <article class="person person--senior">
+                    <div class="person-photo"><img src="../img/team-jonas.jpg" alt="Jonas Vermeer" loading="lazy" /></div>
                     <div class="person-body">
                         <strong>Jonas Vermeer</strong>
                         <div class="person-role">Project lead</div>
                         <p>Owns planning, cost control, and subcontractor sequencing from kickoff to handover.</p>
                     </div>
                 </article>
-                <article class="person">
-                    <div class="person-photo"><img src="../team-sana.jpg" alt="Sana El Idrissi" loading="lazy" /></div>
+                <article class="person person--senior">
+                    <div class="person-photo"><img src="../img/team-sana.jpg" alt="Sana El Idrissi" loading="lazy" /></div>
                     <div class="person-body">
                         <strong>Sana El Idrissi</strong>
                         <div class="person-role">Design partner</div>
                         <p>Shapes layouts, material choices, and detailing so builds stay practical and beautiful.</p>
                     </div>
                 </article>
+                <article class="person person--senior">
+                    <div class="person-photo"><img src="../img/team-keisha.jpg" alt="Keisha Boateng" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Keisha Boateng</strong>
+                        <div class="person-role">Client partner</div>
+                        <p>Keeps clients briefed, decisions logged, and expectations aligned from first meeting to keys in hand.</p>
+                    </div>
+                </article>
+                <article class="person person--senior">
+                    <div class="person-photo"><img src="../img/team-priya.jpg" alt="Priya Sharma" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Priya Sharma</strong>
+                        <div class="person-role">Quantity surveyor</div>
+                        <p>Tracks quantities, valuations, and variations so the budget stays clear from tender to final account.</p>
+                    </div>
+                </article>
+                <article class="person person--senior">
+                    <div class="person-photo"><img src="../img/team-yuki.jpg" alt="Yuki Tanaka" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Yuki Tanaka</strong>
+                        <div class="person-role">Sustainability lead</div>
+                        <p>Guides insulation, airtightness, and material choices so builds meet comfort and energy goals.</p>
+                    </div>
+                </article>
+
+                <article class="person person--crew">
+                    <div class="person-photo"><img src="../img/team-sofia.jpg" alt="Sofia Martens" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Sofia Martens</strong>
+                        <div class="person-role">Site engineer</div>
+                        <p>Sets out levels, checks structure, and keeps drawings aligned with the site.</p>
+                    </div>
+                </article>
+                <article class="person person--crew">
+                    <div class="person-photo"><img src="../img/team-noah.jpg" alt="Noah Jansen" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Noah Jansen</strong>
+                        <div class="person-role">Safety coordinator</div>
+                        <p>Toolbox talks, PPE checks, and site walks for every trade.</p>
+                    </div>
+                </article>
+                <article class="person person--crew">
+                    <div class="person-photo"><img src="../img/team-erik.jpg" alt="Erik Bakker" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Erik Bakker</strong>
+                        <div class="person-role">Site foreman</div>
+                        <p>Sequences trades on site and keeps the programme honest.</p>
+                    </div>
+                </article>
+                <article class="person person--crew">
+                    <div class="person-photo"><img src="../img/team-lars.jpg" alt="Lars Meijer" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Lars Meijer</strong>
+                        <div class="person-role">Lead carpenter</div>
+                        <p>Timber frames, kitchens, and finish joinery.</p>
+                    </div>
+                </article>
+                <article class="person person--crew">
+                    <div class="person-photo"><img src="../img/team-amina.jpg" alt="Amina Hassan" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Amina Hassan</strong>
+                        <div class="person-role">MEP &amp; electrics lead</div>
+                        <p>Power, lighting, and services � clean first and second fix.</p>
+                    </div>
+                </article>
+                <article class="person person--crew">
+                    <div class="person-photo"><img src="../img/team-piet.jpg" alt="Piet de Vries" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Piet de Vries</strong>
+                        <div class="person-role">Brick &amp; masonry lead</div>
+                        <p>Fa�ades, pointing, and courtyard brickwork.</p>
+                    </div>
+                </article>
+                <article class="person person--crew">
+                    <div class="person-photo"><img src="../img/team-jamal.jpg" alt="Jamal Okonkwo" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Jamal Okonkwo</strong>
+                        <div class="person-role">Structural steel lead</div>
+                        <p>Steel packages, crane days, and clean connections.</p>
+                    </div>
+                </article>
+                <article class="person person--crew">
+                    <div class="person-photo"><img src="../img/team-diego.jpg" alt="Diego Morales" loading="lazy" /></div>
+                    <div class="person-body">
+                        <strong>Diego Morales</strong>
+                        <div class="person-role">Finishes lead</div>
+                        <p>Plaster, paint, and final detailing for handover.</p>
+                    </div>
+                </article>
             </div>
         </section>
         <section class="page-block" style="padding-top:0">
             <div class="split-facts">
-                <div><strong>18</strong><span>People on the crew</span></div>
+                <div><strong>29</strong><span>People on the crew</span></div>
                 <div><strong>12+</strong><span>Years average experience</span></div>
                 <div><strong>40+</strong><span>Projects delivered</span></div>
                 <div><strong>100%</strong><span>Licensed trades</span></div>
@@ -117,8 +217,8 @@
     <section class="cta-band">
         <div class="container">
             <h2>Ready to build?</h2>
-            <p>Tell us about your project — renovations, new builds, or commercial fit-outs.</p>
-            <a class="cta" href="contact.html">Get in touch →</a>
+            <p>Tell us about your project � renovations, new builds, or commercial fit-outs.</p>
+            <a class="cta" href="contact.html">Get in touch ?</a>
         </div>
     </section>
 
@@ -126,7 +226,7 @@
         <div class="container">
             <div class="site-footer-grid">
                 <div>
-                    <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+                    <a class="footer-wordmark" href="../index.html">Constructo</a>
                     <p>General contracting and renovations across Amsterdam and the Randstad.</p>
                 </div>
                 <div>
@@ -143,7 +243,7 @@
                     <h4>Company</h4>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="../Verdieping Software Prototype.html">Home</a>
+                    <a href="../index.html">Home</a>
                 </div>
                 <div>
                                         <h4>Legal</h4>
@@ -153,12 +253,16 @@
                 </div>
             </div>
             <div class="footer-inner">
-                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
+                <div>� <span id="year"></span> Constructo � Building with integrity.</div>
                 <div>Prototype for Verdieping Software</div>
             </div>
         </div>
     </footer>
+        <script src="../js/i18n-dict.js"></script>
+    <script src="../js/nav-mega.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="../js/page-transition.js"></script>
     <script src="../js/page.js"></script>
     <script src="../js/cookies.js"></script>
 </body>

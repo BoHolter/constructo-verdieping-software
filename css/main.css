@@ -1,3 +1,4 @@
+/* Shared tokens — keep in sync with project.css */
 :root {
     --ink: #0b0d10;
     --muted: #5a616c;
@@ -9,9 +10,25 @@
     --panel: #0b0d10;
     --panel-muted: rgba(255, 255, 255, 0.72);
     --panel-line: rgba(255, 255, 255, 0.12);
-    --header-bg: rgba(11, 13, 16, 0.94);
+    --header-bg: rgba(255, 255, 255, 0.92);
+    --header-ink: #0b0d10;
+    --header-muted: rgba(11, 13, 16, 0.72);
+    --header-line: rgba(11, 13, 16, 0.1);
+    --header-hover: rgba(11, 13, 16, 0.06);
+    --header-shadow: 0 10px 28px rgba(11, 13, 16, 0.08);
+    --mega-bg: rgba(255, 255, 255, 0.98);
+    --mega-border: rgba(11, 13, 16, 0.1);
+    --mega-shadow: 0 24px 60px rgba(11, 13, 16, 0.12);
+    --mega-heading: rgba(11, 13, 16, 0.45);
+    --mega-link: rgba(11, 13, 16, 0.9);
+    --mega-link-hover: #0b0d10;
+    --mega-line: rgba(11, 13, 16, 0.08);
+    --mega-desc: rgba(11, 13, 16, 0.5);
+    --mega-blurb: rgba(11, 13, 16, 0.68);
+    --mega-accent-bg: rgba(26, 116, 232, 0.08);
+    --mega-accent-border: rgba(26, 116, 232, 0.28);
     --maxw: 1180px;
-    --gutter: clamp(16px, 4vw, 28px);
+    --gutter: clamp(20px, 5vw, 28px);
     --section-space: clamp(56px, 8vw, 96px);
     --theme-ease: .4s ease;
     --font-display: "Bricolage Grotesque", sans-serif;
@@ -32,6 +49,22 @@ html.dark {
     --panel-muted: rgba(232, 237, 244, 0.72);
     --panel-line: rgba(255, 255, 255, 0.12);
     --header-bg: rgba(12, 16, 22, 0.94);
+    --header-ink: #ffffff;
+    --header-muted: rgba(255, 255, 255, 0.82);
+    --header-line: rgba(255, 255, 255, 0.12);
+    --header-hover: rgba(255, 255, 255, 0.08);
+    --header-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
+    --mega-bg: rgba(12, 15, 19, 0.98);
+    --mega-border: rgba(255, 255, 255, 0.12);
+    --mega-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    --mega-heading: rgba(255, 255, 255, 0.45);
+    --mega-link: rgba(255, 255, 255, 0.88);
+    --mega-link-hover: #ffffff;
+    --mega-line: rgba(255, 255, 255, 0.06);
+    --mega-desc: rgba(255, 255, 255, 0.45);
+    --mega-blurb: rgba(255, 255, 255, 0.7);
+    --mega-accent-bg: rgba(26, 116, 232, 0.12);
+    --mega-accent-border: rgba(26, 116, 232, 0.28);
     color-scheme: dark;
 }
 
@@ -44,6 +77,63 @@ body {
     background: var(--bg);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+}
+:focus { outline: none }
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Soft /page-style navigation */
+@view-transition {
+    navigation: auto;
+}
+::view-transition-old(root) {
+    animation: csPageOut 0.32s ease both;
+}
+::view-transition-new(root) {
+    animation: csPageIn 0.38s cubic-bezier(.22, 1, .36, 1) both;
+}
+@keyframes csPageOut {
+    to { opacity: 0; transform: translateY(-10px) scale(0.992); filter: blur(2px); }
+}
+@keyframes csPageIn {
+    from { opacity: 0; transform: translateY(16px) scale(0.992); filter: blur(2px); }
+    to { opacity: 1; transform: none; filter: none; }
+}
+html.js-page-motion body {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(2px);
+    transition:
+        opacity 0.38s cubic-bezier(.22, 1, .36, 1),
+        transform 0.38s cubic-bezier(.22, 1, .36, 1),
+        filter 0.38s ease;
+}
+html.js-page-motion body.page-ready {
+    opacity: 1;
+    transform: none;
+    filter: none;
+}
+html.js-page-motion body.page-leave {
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(2px);
+    pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    html.js-page-motion body,
+    html.js-page-motion body.page-ready,
+    html.js-page-motion body.page-leave {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
 }
 
 html.theme-animate body,
@@ -81,17 +171,35 @@ a { color: inherit }
 
 /* —— Header —— */
 .site-header {
-    position: absolute;
+    position: fixed;
     inset: 0 0 auto 0;
     z-index: 50;
     padding: calc(14px + env(safe-area-inset-top, 0px)) 0 14px;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+    transition:
+        background-color 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease,
+        backdrop-filter 0.45s ease,
+        -webkit-backdrop-filter 0.45s ease;
 }
-.site-header.is-scrolled {
-    position: fixed;
-    left: 0; right: 0;
+.site-header.is-scrolled,
+.site-header.mega-open {
     background: var(--header-bg);
-    border-bottom: 1px solid var(--panel-line);
-    backdrop-filter: blur(12px);
+    border-bottom-color: var(--header-line);
+    box-shadow: var(--header-shadow);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+/* Over dark hero: keep light chrome until scroll */
+.site-header:not(.is-scrolled):not(.mega-open) {
+    --header-ink: #ffffff;
+    --header-muted: rgba(255, 255, 255, 0.82);
+    --header-hover: rgba(255, 255, 255, 0.1);
 }
 .nav {
     position: relative;
@@ -110,7 +218,7 @@ a { color: inherit }
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: #fff;
+    color: var(--header-ink);
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.05rem;
@@ -138,11 +246,11 @@ a { color: inherit }
 }
 .nav-list a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.82);
+    color: var(--header-muted);
     font-weight: 600;
     font-size: 0.92rem;
 }
-.nav-list a:hover { color: #fff }
+.nav-list a:hover { color: var(--header-ink) }
 .cta {
     display: inline-flex;
     align-items: center;
@@ -190,10 +298,11 @@ html.dark .cta-secondary:hover {
     color: var(--accent) !important;
 }
 .theme-toggle,
+.lang-toggle,
 .menu-toggle {
     background: transparent;
     border: 0;
-    color: #fff;
+    color: var(--header-ink);
     font-size: 1.15rem;
     cursor: pointer;
     padding: 10px;
@@ -202,16 +311,161 @@ html.dark .cta-secondary:hover {
     min-height: 44px;
     border-radius: 8px;
 }
+.lang-toggle {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
 .theme-toggle {
     transition: transform .35s ease, background-color .25s ease, color .25s ease;
 }
+.lang-toggle:hover,
 .theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--header-hover);
 }
 html.theme-animate .theme-toggle {
     transform: rotate(-20deg) scale(1.08);
 }
 .menu-toggle { display: none }
+
+/* —— Mega menu —— */
+.nav-mega .mega-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 0;
+    color: var(--header-muted);
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.92rem;
+    cursor: pointer;
+    padding: 8px 2px;
+    min-height: 44px;
+}
+.nav-mega .mega-trigger:hover,
+.nav-mega .has-mega.is-open .mega-trigger {
+    color: var(--header-ink);
+}
+.mega-chevron {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    opacity: 0.7;
+    transition: transform .2s ease;
+}
+.has-mega.is-open .mega-chevron { transform: rotate(180deg) }
+.has-mega {
+    position: relative;
+}
+.mega-panel {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: min(920px, calc(100vw - 32px));
+    padding: 18px 0 0; /* bridge hover gap under the trigger */
+    z-index: 60;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(10px);
+    transition:
+        opacity 0.28s ease,
+        transform 0.28s ease,
+        visibility 0.28s ease;
+}
+.has-mega.is-open .mega-panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+.mega-panel-inner {
+    background: var(--mega-bg);
+    border: 1px solid var(--mega-border);
+    box-shadow: var(--mega-shadow);
+    padding: 28px;
+    backdrop-filter: blur(16px);
+    transform: translateY(6px);
+    opacity: 0.85;
+    transition: transform 0.32s ease, opacity 0.32s ease;
+}
+.has-mega.is-open .mega-panel-inner {
+    transform: translateY(0);
+    opacity: 1;
+}
+.site-header.mega-open {
+    z-index: 80;
+}
+@media (prefers-reduced-motion: reduce) {
+    .site-header,
+    .mega-panel,
+    .mega-panel-inner,
+    .mega-chevron {
+        transition: none !important;
+    }
+}
+.mega-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.1fr 0.9fr;
+    gap: 28px;
+}
+.mega-grid-3 { grid-template-columns: 1fr 1fr 0.9fr }
+.mega-heading {
+    margin: 0 0 14px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mega-heading);
+}
+.mega-link {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--mega-link) !important;
+    font-weight: 600;
+    border-bottom: 1px solid var(--mega-line);
+}
+.mega-link:last-child { border-bottom: 0 }
+.mega-link:hover {
+    color: var(--mega-link-hover) !important;
+}
+.mega-link[aria-current="page"] .mega-link-label {
+    color: var(--accent);
+}
+.mega-desc {
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: var(--mega-desc);
+}
+.mega-col-accent {
+    background: var(--mega-accent-bg);
+    border: 1px solid var(--mega-accent-border);
+    padding: 18px;
+}
+.mega-blurb {
+    margin: 0 0 16px;
+    color: var(--mega-blurb);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+.mega-cta {
+    width: 100%;
+}
+.nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
 
 /* —— Intro —— */
 .frontpage {
@@ -661,6 +915,29 @@ footer {
     color: var(--muted);
     font-size: 0.92rem;
 }
+.site-footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 28px;
+    padding: 36px 0 20px;
+    border-top: 1px solid var(--line);
+}
+.site-footer-grid h4 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+    font-size: 0.95rem;
+}
+.site-footer-grid a {
+    display: block;
+    text-decoration: none;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.site-footer-grid a:hover { color: var(--accent) }
+.site-footer-grid p { color: var(--muted); margin: 0; max-width: 36ch }
 .footer-wordmark {
     font-family: var(--font-display);
     font-weight: 800;
@@ -672,6 +949,10 @@ footer {
     margin: 0 0 28px;
     text-decoration: none;
     display: block;
+}
+.site-footer-grid .footer-wordmark {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 0 0 12px;
 }
 .footer-inner {
     display: flex;
@@ -874,9 +1155,17 @@ footer {
     transform: translateY(24px);
     transition: opacity .75s ease, transform .75s cubic-bezier(.22, 1, .36, 1);
 }
-.reveal.visible {
+.reveal.visible,
+.reveal.is-in {
     opacity: 1;
     transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 html.dark .footer-inner a:hover { color: var(--accent) }
@@ -890,6 +1179,7 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
 
 /* —— Tablet / small laptop —— */
 @media (max-width: 1100px) {
+    .site-footer-grid { grid-template-columns: 1fr 1fr }
     .services {
         grid-template-columns: 1fr;
     }
@@ -924,7 +1214,9 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        width: min(280px, calc(100vw - var(--gutter) * 2));
+        width: min(340px, calc(100vw - var(--gutter) * 2));
+        max-height: min(78vh, 640px);
+        overflow: auto;
         background: rgba(11, 13, 16, 0.98);
         border: 1px solid rgba(255, 255, 255, 0.12);
         padding: 8px;
@@ -934,14 +1226,72 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
     .nav-list li { width: 100% }
     .nav-list a,
     .nav-list .theme-toggle,
-    .nav-list .cta {
+    .nav-list .lang-toggle,
+    .nav-list .cta,
+    .nav-mega .mega-trigger {
         display: flex;
         width: 100%;
         padding: 14px 12px;
         text-align: left;
         justify-content: flex-start;
+        color: rgba(255, 255, 255, 0.88);
     }
+    .nav-list a:hover,
+    .nav-mega .mega-trigger:hover { color: #fff; }
     .nav-list .cta { margin-top: 4px }
+    .mega-panel {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        background: transparent;
+        transform: none;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        pointer-events: none;
+        transition: max-height 0.35s ease, opacity 0.28s ease, visibility 0.28s ease;
+    }
+    .has-mega.is-open .mega-panel {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+    }
+    .mega-panel-inner {
+        padding: 8px 10px 14px;
+        border: 0;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: none;
+        transform: none;
+        opacity: 1;
+    }
+    .mega-heading { color: rgba(255, 255, 255, 0.45) }
+    .mega-link {
+        color: rgba(255, 255, 255, 0.88) !important;
+        border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+    .mega-link:hover { color: #fff !important }
+    .mega-desc { color: rgba(255, 255, 255, 0.45) }
+    .mega-blurb { color: rgba(255, 255, 255, 0.7) }
+    .mega-col-accent {
+        background: rgba(26, 116, 232, 0.14);
+        border-color: rgba(26, 116, 232, 0.32);
+    }
+    .mega-grid,
+    .mega-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .mega-col-accent { padding: 14px }
+    .nav-tools { justify-content: flex-start; padding: 4px 0 }
     .menu-toggle { display: inline-grid; place-items: center }
     .brand span:last-child { font-size: 0.95rem }
     .frontpage {
@@ -965,7 +1315,11 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
 
 /* —— Phone —— */
 @media (max-width: 680px) {
-    :root { --section-space: 52px }
+    :root {
+        --gutter: 24px;
+        --section-space: 52px;
+    }
+    .site-footer-grid { grid-template-columns: 1fr }
 
     .projects {
         grid-template-columns: 1fr;
@@ -977,39 +1331,51 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
         min-height: 100dvh;
     }
     .hero .hero-brand {
-        font-size: clamp(2.6rem, 14vw, 3.8rem);
+        font-size: clamp(2.35rem, 11.5vw, 3.35rem);
+        letter-spacing: -0.03em;
         margin-bottom: 12px;
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
-    .hero h1 { font-size: clamp(1.25rem, 5.5vw, 1.55rem) }
-    .hero .hero-lead { font-size: 1rem; margin-bottom: 22px }
+    .hero h1 { font-size: clamp(1.2rem, 5vw, 1.5rem) }
+    .hero .hero-lead {
+        font-size: 0.98rem;
+        margin-bottom: 22px;
+        max-width: none;
+    }
     .hero-actions,
     .frontpage-actions {
         flex-direction: column;
         align-items: stretch;
-        width: min(100%, 360px);
+        width: 100%;
+        max-width: 100%;
     }
     .hero-actions .cta,
     .frontpage-actions .cta { width: 100% }
 
     .frontpage { place-items: end stretch }
     .frontpage-content h1 {
-        font-size: clamp(2.8rem, 16vw, 4rem);
+        font-size: clamp(2.5rem, 13vw, 3.6rem);
+        letter-spacing: -0.03em;
     }
     .frontpage-content p { font-size: 1rem }
 
     .section-head h2 {
-        font-size: clamp(1.85rem, 8vw, 2.4rem);
+        font-size: clamp(1.65rem, 6.5vw, 2.15rem);
+        overflow-wrap: anywhere;
     }
-    .service h3 { font-size: 1.25rem }
+    .service h3 { font-size: 1.2rem }
     .contact-aside {
-        padding: 24px;
+        padding: 22px;
         max-width: none;
     }
     .contact-aside .cta { width: 100% }
     .band .team { gap: 24px }
     .footer-wordmark {
-        font-size: clamp(2.4rem, 14vw, 4.5rem);
+        font-size: clamp(2.1rem, 11vw, 3.6rem);
+        letter-spacing: -0.03em;
         margin-bottom: 20px;
+        overflow-wrap: anywhere;
     }
     .footer-inner {
         font-size: 0.88rem;
@@ -1021,9 +1387,11 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
 
 /* —— Small phone —— */
 @media (max-width: 380px) {
+    :root { --gutter: 22px }
     .brand span:last-child { display: none }
     .cta { padding: 12px 14px; font-size: 0.84rem }
     .frontpage-kicker { font-size: 0.7rem }
+    .hero .hero-brand { font-size: clamp(2.05rem, 10.5vw, 2.7rem) }
 }
 
 @media (prefers-reduced-motion: reduce) {

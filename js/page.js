@@ -3,7 +3,7 @@
         const skip = document.createElement("a");
         skip.className = "skip-link";
         skip.href = "#main";
-        skip.textContent = "Skip to content";
+        skip.textContent = window.ConstructoI18n ? window.ConstructoI18n.t("Skip to content") : "Skip to content";
         document.body.prepend(skip);
     }
     const main = document.querySelector("main");
@@ -12,12 +12,17 @@
     const menuToggle = document.getElementById("menuToggle");
     const mainMenu = document.getElementById("mainMenu");
 
-    menuToggle?.addEventListener("click", () => {
-        const open = mainMenu.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(open));
-    });
+    if (menuToggle && mainMenu && menuToggle.dataset.menuBound !== "1") {
+        menuToggle.dataset.menuBound = "1";
+        menuToggle.addEventListener("click", () => {
+            const open = mainMenu.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", String(open));
+        });
+    }
 
     mainMenu?.querySelectorAll("a").forEach((link) => {
+        if (link.dataset.menuCloseBound === "1") return;
+        link.dataset.menuCloseBound = "1";
         link.addEventListener("click", () => {
             mainMenu.classList.remove("open");
             menuToggle?.setAttribute("aria-expanded", "false");
@@ -50,7 +55,8 @@
             }
             const message = document.getElementById("message");
             if (role && message && !message.value) {
-                message.value = `Application for: ${role}\n\n`;
+                const prefix = window.ConstructoI18n ? window.ConstructoI18n.t("Application for:") : "Application for:";
+                message.value = `${prefix} ${role}\n\n`;
             }
         } catch (_) { /* ignore */ }
 
@@ -63,13 +69,14 @@
             formStatus.className = "form-status";
             formStatus.textContent = "";
 
+            const tr = (s) => (window.ConstructoI18n ? window.ConstructoI18n.t(s) : s);
             if (!name || !email || !message) {
-                formStatus.textContent = "Please complete name, email, and project brief.";
+                formStatus.textContent = tr("Please complete name, email, and project brief.");
                 formStatus.classList.add("err");
                 return;
             }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                formStatus.textContent = "Enter a valid email address.";
+                formStatus.textContent = tr("Enter a valid email address.");
                 formStatus.classList.add("err");
                 return;
             }
@@ -81,13 +88,14 @@
                 formSuccess.focus?.();
                 formSuccess.scrollIntoView({ behavior: "smooth", block: "start" });
             } else {
-                formStatus.textContent =
-                    "Thanks! This is a demo form — nothing was emailed. We’ll treat it as received.";
+                formStatus.textContent = tr("Thanks! This is a demo form — nothing was emailed. We’ll treat it as received.");
                 formStatus.classList.add("ok");
                 contactForm.reset();
             }
         });
     }
+
+    const trPage = (s) => (window.ConstructoI18n ? window.ConstructoI18n.t(s) : s);
 
     document.getElementById("sendAnother")?.addEventListener("click", () => {
         if (formWrap && formSuccess) {
@@ -98,8 +106,8 @@
             formStatus.className = "form-status";
             const meta = document.getElementById("fileDropMeta");
             const title = document.getElementById("fileDropTitle");
-            if (title) title.textContent = "Add site photos";
-            if (meta) meta.textContent = "JPG or PNG · optional";
+            if (title) title.textContent = trPage("Add site photos");
+            if (meta) meta.textContent = trPage("JPG or PNG · optional");
             contactForm?.querySelector("#name")?.focus();
         }
     });
@@ -110,27 +118,72 @@
         const meta = document.getElementById("fileDropMeta");
         const files = [...(pictures.files || [])];
         if (!files.length) {
-            if (title) title.textContent = "Add site photos";
-            if (meta) meta.textContent = "JPG or PNG · optional";
+            if (title) title.textContent = trPage("Add site photos");
+            if (meta) meta.textContent = trPage("JPG or PNG · optional");
             return;
         }
-        if (title) title.textContent = files.length === 1 ? files[0].name : `${files.length} files selected`;
-        if (meta) meta.textContent = "Click to change";
+        if (title) {
+            title.textContent = files.length === 1
+                ? files[0].name
+                : `${files.length} ${trPage("files selected")}`;
+        }
+        if (meta) meta.textContent = trPage("Click to change");
     });
 
     const filterBar = document.querySelector(".project-filters");
+    const searchInput = document.getElementById("projectSearch");
+    const searchMeta = document.getElementById("projectSearchMeta");
+    const emptyMsg = document.getElementById("projectEmpty");
+    const cards = [...document.querySelectorAll(".project-card")];
+
+    function applyProjectFilters() {
+        if (!cards.length) return;
+        const active = filterBar?.querySelector('button[aria-pressed="true"]');
+        const filter = active?.getAttribute("data-filter") || "all";
+        const q = (searchInput?.value || "").trim().toLowerCase();
+        let shown = 0;
+        cards.forEach((card) => {
+            const cat = card.getAttribute("data-category");
+            const hay = (
+                (card.textContent || "") +
+                " " +
+                (card.getAttribute("data-keywords") || "")
+            ).toLowerCase();
+            const matchFilter = filter === "all" || cat === filter;
+            const matchSearch = !q || hay.includes(q);
+            const show = matchFilter && matchSearch;
+            card.hidden = !show;
+            if (show) shown += 1;
+        });
+        if (emptyMsg) emptyMsg.hidden = shown !== 0;
+        if (searchMeta) {
+            const tr = (s) => (window.ConstructoI18n ? window.ConstructoI18n.t(s) : s);
+            if (q || filter !== "all") {
+                searchMeta.textContent = shown + " " + tr("projects shown");
+            } else {
+                searchMeta.textContent = "";
+            }
+        }
+    }
+
     if (filterBar) {
-        const cards = [...document.querySelectorAll(".project-card")];
         filterBar.addEventListener("click", (e) => {
             const btn = e.target.closest("button[data-filter]");
             if (!btn) return;
             filterBar.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", "false"));
             btn.setAttribute("aria-pressed", "true");
-            const filter = btn.getAttribute("data-filter");
-            cards.forEach((card) => {
-                const show = filter === "all" || card.getAttribute("data-category") === filter;
-                card.hidden = !show;
-            });
+            applyProjectFilters();
         });
+    }
+    searchInput?.addEventListener("input", applyProjectFilters);
+    document.addEventListener("constructo:lang", applyProjectFilters);
+
+    // Subtle scroll / hover motion (shared)
+    if (!document.querySelector("script[data-cs-motion]")) {
+        const motion = document.createElement("script");
+        const inPages = /\/pages\//.test(location.pathname);
+        motion.src = (inPages ? "../" : "") + "js/motion.js";
+        motion.setAttribute("data-cs-motion", "1");
+        document.body.appendChild(motion);
     }
 })();

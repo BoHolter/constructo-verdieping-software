@@ -2,20 +2,22 @@
     const items = [...document.querySelectorAll("[data-lightbox]")];
     if (!items.length) return;
 
+    const t = (en) => (window.ConstructoI18n ? window.ConstructoI18n.t(en) : en);
+
     const root = document.createElement("div");
     root.className = "lightbox";
     root.hidden = true;
     root.setAttribute("role", "dialog");
     root.setAttribute("aria-modal", "true");
-    root.setAttribute("aria-label", "Image gallery");
+    root.setAttribute("aria-label", t("Image gallery"));
     root.innerHTML = `
-        <button type="button" class="lightbox-close" aria-label="Close gallery">✕</button>
-        <button type="button" class="lightbox-prev" aria-label="Previous image">‹</button>
+        <button type="button" class="lightbox-close" aria-label="${t("Close gallery")}">✕</button>
+        <button type="button" class="lightbox-prev" aria-label="${t("Previous image")}">‹</button>
         <figure class="lightbox-figure">
             <img alt="" />
             <figcaption></figcaption>
         </figure>
-        <button type="button" class="lightbox-next" aria-label="Next image">›</button>
+        <button type="button" class="lightbox-next" aria-label="${t("Next image")}">›</button>
     `;
     document.body.appendChild(root);
 
@@ -23,6 +25,13 @@
     const cap = root.querySelector("figcaption");
     let index = 0;
     let lastFocus = null;
+
+    function syncAria() {
+        root.setAttribute("aria-label", t("Image gallery"));
+        root.querySelector(".lightbox-close").setAttribute("aria-label", t("Close gallery"));
+        root.querySelector(".lightbox-prev").setAttribute("aria-label", t("Previous image"));
+        root.querySelector(".lightbox-next").setAttribute("aria-label", t("Next image"));
+    }
 
     function open(i) {
         index = i;
@@ -80,4 +89,6 @@
         if (e.key === "ArrowRight") next(1);
         if (e.key === "ArrowLeft") next(-1);
     });
+
+    document.addEventListener("constructo:lang", syncAria);
 })();

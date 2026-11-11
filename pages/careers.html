@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Careers â€” Constructo</title>
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../favicon.png" type="image/png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180" />
-    <meta name="description" content="Open vacancies at Constructo â€” carpenters, project managers, site assistants, and internships." />
+    <title>Careers — Constructo</title>
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" sizes="180x180" />
+    <meta name="description" content="Open vacancies at Constructo — carpenters, project managers, site assistants, and internships." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=9" />
     <script src="../js/scrollbar.js" defer></script>
     <link rel="stylesheet" href="../css/project.css" />
     <script>
@@ -25,26 +25,36 @@
                 document.documentElement.dataset.theme = t;
             } catch (e) {}
         })();
+        (function () {
+            try {
+                var l = localStorage.getItem("constructoLang");
+                if (l === "nl" || l === "en") {
+                    document.documentElement.lang = l;
+                    document.documentElement.dataset.lang = l;
+                }
+            } catch (e) {}
+        })();
     </script>
 </head>
 <body>
     <header class="site-header">
         <div class="container nav">
-            <a class="brand" href="../Verdieping Software Prototype.html">
+            <a class="brand" href="../index.html">
                 <span class="logo" aria-hidden="true">CS</span>
                 <span>Constructo</span>
             </a>
             <nav aria-label="Main navigation">
                 <div class="nav-controls">
-                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">â˜°</button>
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">?</button>
                     <ul class="nav-list" id="mainMenu">
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
+                        <li><a href="style-quiz.html">Quiz</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
-                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">â˜€</button></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">?</button></li>
                     </ul>
                 </div>
             </nav>
@@ -53,10 +63,10 @@
 
     <section class="page-hero">
         <div class="page-hero-media" aria-hidden="true">
-            <img src="../Constructor.png" alt="" />
+            <img src="../img/Constructor.jpg" alt="" />
         </div>
         <div class="page-hero-content">
-            <span class="section-label">Studio Â· Careers</span>
+            <span class="section-label">Studio · Careers</span>
             <h1>Careers</h1>
             <p>Join a small crew that builds carefully and communicates clearly.</p>
         </div>
@@ -75,32 +85,32 @@
                         <strong>Carpenter / Finisher</strong>
                         <span>Interior fit-outs and residential renovations across Amsterdam.</span>
                     </div>
-                    <div class="job-meta">Full-time Â· Amsterdam</div>
-                    <div class="job-link">Apply â†’</div>
+                    <div class="job-meta">Full-time · Amsterdam</div>
+                    <div class="job-link">Apply ?</div>
                 </a>
                 <a class="job" href="contact.html?type=Careers&amp;role=Junior%20PM">
                     <div>
                         <strong>Junior project manager</strong>
-                        <span>Support planning, suppliers, and client updates on 2â€“3 active jobs.</span>
+                        <span>Support planning, suppliers, and client updates on 2–3 active jobs.</span>
                     </div>
-                    <div class="job-meta">Full-time Â· Amsterdam</div>
-                    <div class="job-link">Apply â†’</div>
+                    <div class="job-meta">Full-time · Amsterdam</div>
+                    <div class="job-link">Apply ?</div>
                 </a>
                 <a class="job" href="contact.html?type=Careers&amp;role=Site%20Assistant">
                     <div>
                         <strong>Site assistant</strong>
                         <span>Keep materials moving, check deliveries, and help with daily site logistics.</span>
                     </div>
-                    <div class="job-meta">Part-time Â· Randstad</div>
-                    <div class="job-link">Apply â†’</div>
+                    <div class="job-meta">Part-time · Randstad</div>
+                    <div class="job-link">Apply ?</div>
                 </a>
                 <a class="job" href="contact.html?type=Careers&amp;role=Internship">
                     <div>
-                        <strong>Internship â€” construction engineering</strong>
+                        <strong>Internship — construction engineering</strong>
                         <span>Shadow a project lead for a semester and work on real site documentation.</span>
                     </div>
-                    <div class="job-meta">Internship Â· Amsterdam</div>
-                    <div class="job-link">Apply â†’</div>
+                    <div class="job-meta">Internship · Amsterdam</div>
+                    <div class="job-link">Apply ?</div>
                 </a>
             </div>
         </section>
@@ -108,7 +118,7 @@
             <div class="page-intro">
                 <span class="section-label">How we hire</span>
                 <h2>Simple process</h2>
-                <p>Send a short note via contact â€” we reply within a week, invite you for a coffee or site visit, and decide quickly.</p>
+                <p>Send a short note via contact — we reply within a week, invite you for a coffee or site visit, and decide quickly.</p>
             </div>
         </section>
     </main>
@@ -116,8 +126,8 @@
     <section class="cta-band">
         <div class="container">
             <h2>Ready to build?</h2>
-            <p>Tell us about your project â€” renovations, new builds, or commercial fit-outs.</p>
-            <a class="cta" href="contact.html">Get in touch â†’</a>
+            <p>Tell us about your project — renovations, new builds, or commercial fit-outs.</p>
+            <a class="cta" href="contact.html">Get in touch ?</a>
         </div>
     </section>
 
@@ -125,7 +135,7 @@
         <div class="container">
             <div class="site-footer-grid">
                 <div>
-                    <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+                    <a class="footer-wordmark" href="../index.html">Constructo</a>
                     <p>General contracting and renovations across Amsterdam and the Randstad.</p>
                 </div>
                 <div>
@@ -142,7 +152,7 @@
                     <h4>Company</h4>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="../Verdieping Software Prototype.html">Home</a>
+                    <a href="../index.html">Home</a>
                 </div>
                 <div>
                                         <h4>Legal</h4>
@@ -152,12 +162,16 @@
                 </div>
             </div>
             <div class="footer-inner">
-                <div>Â© <span id="year"></span> Constructo â€” Building with integrity.</div>
+                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
                 <div>Prototype for Verdieping Software</div>
             </div>
         </div>
     </footer>
+        <script src="../js/i18n-dict.js"></script>
+    <script src="../js/nav-mega.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="../js/page-transition.js"></script>
     <script src="../js/page.js"></script>
     <script src="../js/cookies.js"></script>
 </body>

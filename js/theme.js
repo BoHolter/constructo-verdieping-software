@@ -27,9 +27,11 @@
         document.querySelectorAll("#themeToggle, [data-theme-toggle]").forEach((btn) => {
             // Show the mode you can switch TO
             btn.textContent = isDark ? "☀" : "☾";
-            btn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+            const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+            const translated = window.ConstructoI18n ? window.ConstructoI18n.t(label) : label;
+            btn.setAttribute("aria-label", translated);
             btn.setAttribute("aria-pressed", String(isDark));
-            btn.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+            btn.title = translated;
         });
     }
 
@@ -57,6 +59,10 @@
             if (localStorage.getItem(STORAGE_KEY)) return;
         } catch (_) { return; }
         setTheme(e.matches ? "dark" : "light", { persist: false, animate: true });
+    });
+
+    document.addEventListener("constructo:lang", () => {
+        applyTheme(preferredTheme(), { animate: false });
     });
 
     window.ConstructoTheme = { setTheme, preferredTheme, applyTheme };

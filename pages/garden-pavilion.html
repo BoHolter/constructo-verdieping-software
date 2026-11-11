@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Garden Pavilion ‚Äî Constructo</title>
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../favicon.png" type="image/png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180" />
-    <meta name="description" content="Garden Pavilion in Haarlem ‚Äî a timber-and-glass backyard studio with patio and planting by Constructo." />
+    <title>Garden Pavilion ó Constructo</title>
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" sizes="180x180" />
+    <meta name="description" content="Garden Pavilion in Haarlem ó a timber-and-glass backyard studio with patio and planting by Constructo." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=9" />
     <script src="../js/scrollbar.js" defer></script>
     <link rel="stylesheet" href="../css/project.css" />
     <script>
@@ -25,26 +25,36 @@
                 document.documentElement.dataset.theme = t;
             } catch (e) {}
         })();
+        (function () {
+            try {
+                var l = localStorage.getItem("constructoLang");
+                if (l === "nl" || l === "en") {
+                    document.documentElement.lang = l;
+                    document.documentElement.dataset.lang = l;
+                }
+            } catch (e) {}
+        })();
     </script>
 </head>
 <body>
     <header class="site-header">
         <div class="container nav">
-            <a class="brand" href="../Verdieping Software Prototype.html">
+            <a class="brand" href="../index.html">
                 <span class="logo" aria-hidden="true">CS</span>
                 <span>Constructo</span>
             </a>
             <nav aria-label="Main navigation">
                 <div class="nav-controls">
-                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">‚ò∞</button>
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">?</button>
                     <ul class="nav-list" id="mainMenu">
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
+                        <li><a href="style-quiz.html">Quiz</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
-                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">‚òÄ</button></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">?</button></li>
                     </ul>
                 </div>
             </nav>
@@ -53,12 +63,12 @@
 
     <section class="page-hero">
         <div class="page-hero-media" aria-hidden="true">
-            <img src="../Garden-Pavilion.jpg" alt="Project photo" />
+            <img src="../img/Garden-Pavilion.jpg" alt="Project photo" />
         </div>
         <div class="page-hero-content">
-            <span class="section-label">Residential ¬∑ 2024</span>
+            <span class="section-label">Residential ∑ 2024</span>
             <h1>Garden Pavilion</h1>
-            <p>A freestanding timber-and-glass studio at the end of a Haarlem garden ‚Äî workspace by day, guest room by night, built to feel like part of the landscape.</p>
+            <p>A freestanding timber-and-glass studio at the end of a Haarlem garden ó workspace by day, guest room by night, built to feel like part of the landscape.</p>
         </div>
     </section>
 
@@ -66,16 +76,16 @@
         <div class="specs" aria-label="Project facts">
             <div><dt>Location</dt><dd>Haarlem</dd></div>
             <div><dt>Client</dt><dd>Couple + home office</dd></div>
-            <div><dt>Size</dt><dd>38 m¬≤ pavilion</dd></div>
+            <div><dt>Size</dt><dd>38 m≤ pavilion</dd></div>
             <div><dt>Duration</dt><dd>4 months</dd></div>
             <div><dt>Year</dt><dd>2024</dd></div>
-            <div><dt>Budget</dt><dd>‚Ç¨95k ‚Äì ‚Ç¨110k</dd></div>
+            <div><dt>Budget</dt><dd>Ä95k ñ Ä110k</dd></div>
         </div>
 
         <div class="project-layout">
             <article class="project-copy">
                 <h2>The brief</h2>
-                <p>Working from home had taken over the dining table. The clients wanted a quiet backyard pavilion with power, fibre, and a pull-out daybed for guests ‚Äî without eating the whole garden or triggering a heavy permit path.</p>
+                <p>Working from home had taken over the dining table. The clients wanted a quiet backyard pavilion with power, fibre, and a pull-out daybed for guests ó without eating the whole garden or triggering a heavy permit path.</p>
 
                 <h2>What we built</h2>
                 <p>Constructo delivered a prefabricated timber frame clad in vertical cedar, with triple glazing on the garden side and a solid rear wall for neighbours. A gravel patio and low planting beds stitch the pavilion back to the main house path.</p>
@@ -94,27 +104,27 @@
             <aside class="project-aside">
                 <h3>Need a garden studio?</h3>
                 <p>We design compact pavilions that stay warm, quiet, and neighbour-friendly.</p>
-                <a class="cta" href="contact.html?type=New%20Build">Request a quote ‚Üí</a>
-                <a class="back-link" href="projects.html">‚Üê All projects</a>
+                <a class="cta" href="contact.html?type=New%20Build">Request a quote ?</a>
+                <a class="back-link" href="projects.html">? All projects</a>
             </aside>
         </div>        <section class="project-gallery" aria-labelledby="galHeading">
-            <h2 id="galHeading">Gallery ¬∑ before &amp; after</h2>
+            <h2 id="galHeading">Gallery ∑ before &amp; after</h2>
             <div class="ba-pair">
-                <a class="gallery-item" href="../gallery-garden-before.jpg" data-lightbox data-full="../gallery-garden-before.jpg" data-caption="Garden before">
+                <a class="gallery-item" href="../img/gallery-garden-before.jpg" data-lightbox data-full="../img/gallery-garden-before.jpg" data-caption="Garden before">
                     <span class="gallery-badge">Before</span>
-                    <img src="../gallery-garden-before.jpg" alt="Empty garden before pavilion build" loading="lazy" />
+                    <img src="../img/gallery-garden-before.jpg" alt="Empty garden before pavilion build" loading="lazy" />
                 </a>
-                <a class="gallery-item" href="../gallery-garden-after.jpg" data-lightbox data-full="../gallery-garden-after.jpg" data-caption="Garden after">
+                <a class="gallery-item" href="../img/gallery-garden-after.jpg" data-lightbox data-full="../img/gallery-garden-after.jpg" data-caption="Garden after">
                     <span class="gallery-badge">After</span>
-                    <img src="../gallery-garden-after.jpg" alt="Finished garden with pavilion patio" loading="lazy" />
+                    <img src="../img/gallery-garden-after.jpg" alt="Finished garden with pavilion patio" loading="lazy" />
                 </a>
             </div>
             <div class="gallery-grid">
-                <a class="gallery-item" href="../Garden-Pavilion.jpg" data-lightbox data-full="../Garden-Pavilion.jpg" data-caption="Pavilion">
-                    <img src="../Garden-Pavilion.jpg" alt="Timber and glass garden pavilion" loading="lazy" />
+                <a class="gallery-item" href="../img/Garden-Pavilion.jpg" data-lightbox data-full="../img/Garden-Pavilion.jpg" data-caption="Pavilion">
+                    <img src="../img/Garden-Pavilion.jpg" alt="Timber and glass garden pavilion" loading="lazy" />
                 </a>
-                <a class="gallery-item" href="../Brick-Courtyard.jpg" data-lightbox data-full="../Brick-Courtyard.jpg" data-caption="Evening light">
-                    <img src="../Brick-Courtyard.jpg" alt="Garden pavilion evening atmosphere" loading="lazy" />
+                <a class="gallery-item" href="../img/Brick-Courtyard.jpg" data-lightbox data-full="../img/Brick-Courtyard.jpg" data-caption="Evening light">
+                    <img src="../img/Brick-Courtyard.jpg" alt="Garden pavilion evening atmosphere" loading="lazy" />
                 </a>
             </div>
         </section>
@@ -124,39 +134,38 @@
             <h2 id="relatedHeading">More projects</h2>
             <div class="related-grid">
                 <a class="related-card" href="family-home.html">
-                    <img src="../Home%20Extestion.jpg" alt="Family Home" loading="lazy" />
+                    <img src="../img/Home-Extension.jpg" alt="Family Home" loading="lazy" />
                     <strong>Family Home</strong>
-                    <span>Residential ¬∑ 2024</span>
+                    <span>Residential ∑ 2024</span>
                 </a>
                 <a class="related-card" href="canal-townhouse.html">
-                    <img src="../Canal-Townhouse.jpg" alt="Canal Townhouse" loading="lazy" />
+                    <img src="../img/Canal-Townhouse.jpg" alt="Canal Townhouse" loading="lazy" />
                     <strong>Canal Townhouse</strong>
-                    <span>Residential ¬∑ 2025</span>
+                    <span>Residential ∑ 2025</span>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer>
+        <footer>
         <div class="container">
-            <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
-            <div class="footer-inner">
-                <div>¬© <span id="year"></span> Constructo ‚Äî Building with integrity.</div>
-                <div>
-                    <a href="contact.html">Contact</a>
-                    ¬∑ <a href="process.html">Process</a>
-                    ¬∑ <a href="faq.html">FAQ</a>
-                    ¬∑ <a href="privacy.html">Privacy</a>
-                    ¬∑ <a href="cookies.html">Cookies</a>
-                    ¬∑ <a href="terms.html">Terms</a>
-                    ¬∑ Tel: +31 20 123 4567
-                </div>
+            <div class="site-footer-grid">
+                <div><a class="footer-wordmark" href="../index.html">Constructo</a><p>General contracting and renovations across Amsterdam and the Randstad.</p></div>
+                <div><h4>Explore</h4><a href="projects.html">Projects</a><a href="process.html">How we work</a><a href="faq.html">FAQ</a></div>
+                <div><h4>Company</h4><a href="about.html">About</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div>
+                <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a></div>
             </div>
+            <div class="footer-inner"><div>© <span id="year"></span> Constructo</div><div>Prototype for Verdieping Software</div></div>
         </div>
     </footer>
+        <script src="../js/i18n-dict.js"></script>
+    <script src="../js/nav-mega.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="../js/page-transition.js"></script>
     <script src="../js/page.js"></script>
     <script src="../js/lightbox.js"></script>
+    <script src="../js/ba-slider.js"></script>
     <script src="../js/cookies.js"></script>
 </body>
 </html>

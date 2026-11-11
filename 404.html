@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Page not found — Constructo</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="180x180" />
+    <meta name="description" content="This Constructo page could not be found." />
+    <meta name="theme-color" content="#1a74e8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Page not found — Constructo" />
+    <meta property="og:description" content="This page could not be found." />
+    <meta property="og:image" content="img/Constructor.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/scrollbar.css?v=9" />
+    <script src="js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+        (function () {
+            try {
+                var l = localStorage.getItem("constructoLang");
+                if (l === "nl" || l === "en") {
+                    document.documentElement.lang = l;
+                    document.documentElement.dataset.lang = l;
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body class="error-page">
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="pages/services.html">Services</a></li>
+                        <li><a href="pages/projects.html">Projects</a></li>
+                        <li><a href="pages/contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container error-main" id="main">
+        <p class="section-label">404</p>
+        <h1>This page isn’t on the drawings</h1>
+        <p class="error-lead">The URL may be wrong, moved, or never built. Let’s get you back on site.</p>
+        <div class="error-actions">
+            <a class="cta" href="index.html">Back to home →</a>
+            <a class="cta cta-secondary" href="pages/projects.html">View projects</a>
+            <a class="cta cta-secondary" href="pages/contact.html">Contact</a>
+        </div>
+        <ul class="error-links">
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/estimate.html">Estimate calculator</a></li>
+            <li><a href="pages/faq.html">FAQ</a></li>
+            <li><a href="pages/team.html">Team</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="site-footer-grid">
+                <div><a class="footer-wordmark" href="index.html">Constructo</a><p>General contracting and renovations across Amsterdam and the Randstad.</p></div>
+                <div><h4>Explore</h4><a href="pages/projects.html">Projects</a><a href="pages/process.html">How we work</a><a href="pages/faq.html">FAQ</a></div>
+                <div><h4>Company</h4><a href="pages/about.html">About</a><a href="pages/team.html">Team</a><a href="pages/contact.html">Contact</a></div>
+                <div><h4>Legal</h4><a href="pages/privacy.html">Privacy</a><a href="pages/cookies.html">Cookies</a><a href="pages/terms.html">Terms</a></div>
+            </div>
+            <div class="footer-inner">
+                <div>© <span id="year"></span> Constructo — Building with integrity.</div>
+                <div>Prototype for Verdieping Software</div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/i18n-dict.js"></script>
+    <script src="js/nav-mega.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/page-transition.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/cookies.js"></script>
+</body>
+</html>

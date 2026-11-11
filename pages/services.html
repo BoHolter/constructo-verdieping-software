@@ -4,14 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Services — Constructo</title>
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../favicon.png" type="image/png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" sizes="180x180" />
     <meta name="description" content="Constructo services — general contracting, renovations, commercial fit-out, and project management." />
+    <meta name="theme-color" content="#1a74e8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Services — Constructo" />
+    <meta property="og:description" content="General contracting, renovations, and project management." />
+    <meta property="og:image" content="../img/Constructor.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=9" />
     <script src="../js/scrollbar.js" defer></script>
     <link rel="stylesheet" href="../css/project.css" />
     <script>
@@ -25,12 +31,21 @@
                 document.documentElement.dataset.theme = t;
             } catch (e) {}
         })();
+        (function () {
+            try {
+                var l = localStorage.getItem("constructoLang");
+                if (l === "nl" || l === "en") {
+                    document.documentElement.lang = l;
+                    document.documentElement.dataset.lang = l;
+                }
+            } catch (e) {}
+        })();
     </script>
 </head>
 <body>
     <header class="site-header">
         <div class="container nav">
-            <a class="brand" href="../Verdieping Software Prototype.html">
+            <a class="brand" href="../index.html">
                 <span class="logo" aria-hidden="true">CS</span>
                 <span>Constructo</span>
             </a>
@@ -42,6 +57,7 @@
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
+                        <li><a href="style-quiz.html">Quiz</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
                         <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
@@ -53,7 +69,7 @@
 
     <section class="page-hero">
         <div class="page-hero-media" aria-hidden="true">
-            <img src="../Constructor.png" alt="" />
+            <img src="../img/Constructor.jpg" alt="" />
         </div>
         <div class="page-hero-content">
             <span class="section-label">Capabilities</span>
@@ -114,7 +130,7 @@
         <div class="container">
             <div class="site-footer-grid">
                 <div>
-                    <a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a>
+                    <a class="footer-wordmark" href="../index.html">Constructo</a>
                     <p>General contracting and renovations across Amsterdam and the Randstad.</p>
                 </div>
                 <div>
@@ -131,7 +147,7 @@
                     <h4>Company</h4>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="../Verdieping Software Prototype.html">Home</a>
+                    <a href="../index.html">Home</a>
                 </div>
                 <div>
                                         <h4>Legal</h4>
@@ -146,7 +162,11 @@
             </div>
         </div>
     </footer>
+        <script src="../js/i18n-dict.js"></script>
+    <script src="../js/nav-mega.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="../js/page-transition.js"></script>
     <script src="../js/page.js"></script>
     <script src="../js/cookies.js"></script>
 </body>

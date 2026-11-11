@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Warehouse Loft — Constructo</title>
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../favicon.png" type="image/png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" sizes="180x180" />
     <meta name="description" content="Warehouse Loft conversion in Amsterdam Noord by Constructo." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/scrollbar.css?v=8" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=9" />
     <script src="../js/scrollbar.js" defer></script>
     <link rel="stylesheet" href="../css/project.css" />
     <script>
@@ -25,12 +25,21 @@
                 document.documentElement.dataset.theme = t;
             } catch (e) {}
         })();
+        (function () {
+            try {
+                var l = localStorage.getItem("constructoLang");
+                if (l === "nl" || l === "en") {
+                    document.documentElement.lang = l;
+                    document.documentElement.dataset.lang = l;
+                }
+            } catch (e) {}
+        })();
     </script>
 </head>
 <body>
     <header class="site-header">
         <div class="container nav">
-            <a class="brand" href="../Verdieping Software Prototype.html">
+            <a class="brand" href="../index.html">
                 <span class="logo" aria-hidden="true">CS</span>
                 <span>Constructo</span>
             </a>
@@ -42,6 +51,7 @@
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="process.html">Process</a></li>
                         <li><a href="team.html">Team</a></li>
+                        <li><a href="style-quiz.html">Quiz</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html" class="cta">Contact</a></li>
                         <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
@@ -51,7 +61,7 @@
         </div>
     </header>
     <section class="page-hero">
-        <div class="page-hero-media"><img src="../Warehouse-Loft.jpg" alt="Warehouse Loft project exterior" /></div>
+        <div class="page-hero-media"><img src="../img/Warehouse-Loft.jpg" alt="Warehouse Loft project exterior" /></div>
         <div class="page-hero-content">
             <span class="section-label">Interior · 2025</span>
             <h1>Warehouse Loft</h1>
@@ -92,21 +102,37 @@
         <section class="project-gallery" aria-labelledby="galHeading">
             <h2 id="galHeading">Gallery · before &amp; after</h2>
             <div class="ba-pair">
-                <a class="gallery-item" href="../gallery-loft-before.jpg" data-lightbox data-full="../gallery-loft-before.jpg" data-caption="Warehouse before">
+                <a class="gallery-item" href="../img/gallery-loft-before.jpg" data-lightbox data-full="../img/gallery-loft-before.jpg" data-caption="Warehouse before">
                     <span class="gallery-badge">Before</span>
-                    <img src="../gallery-loft-before.jpg" alt="Empty warehouse bay before conversion" loading="lazy" />
+                    <img src="../img/gallery-loft-before.jpg" alt="Empty warehouse bay before conversion" loading="lazy" />
                 </a>
-                <a class="gallery-item" href="../gallery-loft-after.jpg" data-lightbox data-full="../gallery-loft-after.jpg" data-caption="Loft after">
+                <a class="gallery-item" href="../img/gallery-loft-after.jpg" data-lightbox data-full="../img/gallery-loft-after.jpg" data-caption="Loft after">
                     <span class="gallery-badge">After</span>
-                    <img src="../gallery-loft-after.jpg" alt="Finished warehouse loft living space" loading="lazy" />
+                    <img src="../img/gallery-loft-after.jpg" alt="Finished warehouse loft living space" loading="lazy" />
                 </a>
             </div>
             <div class="gallery-grid">
-                <a class="gallery-item" href="../Warehouse-Loft.jpg" data-lightbox data-full="../Warehouse-Loft.jpg" data-caption="Exterior">
-                    <img src="../Warehouse-Loft.jpg" alt="Warehouse loft exterior with steel windows" loading="lazy" />
+                <a class="gallery-item" href="../img/Warehouse-Loft.jpg" data-lightbox data-full="../img/Warehouse-Loft.jpg" data-caption="Exterior">
+                    <img src="../img/Warehouse-Loft.jpg" alt="Warehouse loft exterior with steel windows" loading="lazy" />
                 </a>
-                <a class="gallery-item" href="../Urban%20Loft%20Revamp.jpg" data-lightbox data-full="../Urban%20Loft%20Revamp.jpg" data-caption="Interior detail">
-                    <img src="../Urban%20Loft%20Revamp.jpg" alt="Loft interior detailing" loading="lazy" />
+                <a class="gallery-item" href="../img/Urban-Loft-Revamp.jpg" data-lightbox data-full="../img/Urban-Loft-Revamp.jpg" data-caption="Interior detail">
+                    <img src="../img/Urban-Loft-Revamp.jpg" alt="Loft interior detailing" loading="lazy" />
+                </a>
+            </div>
+        </section>
+
+        <section class="related" aria-labelledby="relatedHeading">
+            <h2 id="relatedHeading">More projects</h2>
+            <div class="related-grid">
+                <a class="related-card" href="urban-loft-revamp.html">
+                    <img src="../img/Urban-Loft-Revamp.jpg" alt="Urban Loft Revamp" loading="lazy" />
+                    <strong>Urban Loft Revamp</strong>
+                    <span>Interior · 2024</span>
+                </a>
+                <a class="related-card" href="coastal-office.html">
+                    <img src="../img/Coastal.jpg" alt="Coastal Office" loading="lazy" />
+                    <strong>Coastal Office</strong>
+                    <span>Commercial · 2025</span>
                 </a>
             </div>
         </section>
@@ -114,7 +140,7 @@
     <footer>
         <div class="container">
             <div class="site-footer-grid">
-                <div><a class="footer-wordmark" href="../Verdieping Software Prototype.html">Constructo</a><p>General contracting and renovations across Amsterdam and the Randstad.</p></div>
+                <div><a class="footer-wordmark" href="../index.html">Constructo</a><p>General contracting and renovations across Amsterdam and the Randstad.</p></div>
                 <div><h4>Explore</h4><a href="projects.html">Projects</a><a href="process.html">How we work</a><a href="faq.html">FAQ</a></div>
                 <div><h4>Company</h4><a href="about.html">About</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div>
                 <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a></div>
@@ -122,9 +148,14 @@
             <div class="footer-inner"><div>© <span id="year"></span> Constructo</div><div>Prototype for Verdieping Software</div></div>
         </div>
     </footer>
+        <script src="../js/i18n-dict.js"></script>
+    <script src="../js/nav-mega.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/theme.js"></script>
+    <script src="../js/page-transition.js"></script>
     <script src="../js/page.js"></script>
     <script src="../js/lightbox.js"></script>
+    <script src="../js/ba-slider.js"></script>
     <script src="../js/cookies.js"></script>
 </body>
 </html>

@@ -51,6 +51,25 @@ body.intro-open #cs-scroll {
     transition: opacity .25s ease;
 }
 
+@media (max-width: 900px) {
+    #cs-scrollbar {
+        top: 10px;
+        right: 3px;
+        bottom: 10px;
+        width: 4px;
+        opacity: 0.55;
+    }
+    #cs-scrollbar.is-visible,
+    #cs-scrollbar.is-active,
+    #cs-scrollbar:hover {
+        opacity: 0.85;
+    }
+    #cs-scrollbar-thumb:hover,
+    #cs-scrollbar-thumb.is-dragging {
+        transform: scaleX(1.15);
+    }
+}
+
 #cs-scrollbar.is-visible,
 #cs-scrollbar.is-active,
 #cs-scrollbar:hover {

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Estimate — Constructo</title>
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" sizes="180x180" />
+    <meta name="description" content="Professional preliminary cost estimate with Constructo — clear line items before site survey." />
+    <meta name="theme-color" content="#1a74e8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Estimate — Constructo" />
+    <meta property="og:description" content="Preliminary cost estimate with clear line items before site survey." />
+    <meta property="og:image" content="../img/Constructor.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/scrollbar.css?v=9" />
+    <script src="../js/scrollbar.js" defer></script>
+    <link rel="stylesheet" href="../css/project.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("theme");
+                if (t !== "light" && t !== "dark") {
+                    t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                document.documentElement.classList.toggle("dark", t === "dark");
+                document.documentElement.dataset.theme = t;
+            } catch (e) {}
+        })();
+        (function () {
+            try {
+                var l = localStorage.getItem("constructoLang");
+                if (l === "nl" || l === "en") {
+                    document.documentElement.lang = l;
+                    document.documentElement.dataset.lang = l;
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../index.html">
+                <span class="logo" aria-hidden="true">CS</span>
+                <span>Constructo</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <div class="nav-controls">
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Open menu">☰</button>
+                    <ul class="nav-list" id="mainMenu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="estimate.html" aria-current="page">Estimate</a></li>
+                        <li><a href="contact.html" class="cta">Contact</a></li>
+                        <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle color mode" type="button">☀</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero estimate-hero">
+        <div class="page-hero-media" aria-hidden="true"><img src="../img/Constructor.jpg" alt="" /></div>
+        <div class="page-hero-content">
+            <span class="section-label">Commercial · Estimate</span>
+            <h1>Cost estimate</h1>
+            <p>Indicative investment model for renovations, new builds, and fit-outs — transparent line items before we visit the site.</p>
+        </div>
+    </section>
+
+    <main id="main">
+        <section class="estimate-stage">
+            <div class="container estimate-stage-inner">
+                <div class="estimate-kpis" aria-hidden="true">
+                    <div><span>Rate basis</span><strong id="kpiRate">—</strong></div>
+                    <div><span>Scope size</span><strong id="kpiSize">—</strong></div>
+                    <div><span>Finish factor</span><strong id="kpiFinish">—</strong></div>
+                    <div><span>Ref.</span><strong id="kpiRef">CS-EST</strong></div>
+                </div>
+
+                <div class="estimate-layout estimate-layout-xl">
+                    <form id="fullEstimate" class="estimate-form estimate-form-xl" novalidate>
+                        <header class="estimate-form-head">
+                            <p class="section-label">Input</p>
+                            <h2>Project parameters</h2>
+                            <p>Complete the fields below. Figures update live and remain non-binding until survey and scope.</p>
+                        </header>
+
+                        <div class="estimate-fields">
+                            <div class="field">
+                                <label for="estType">Project type</label>
+                                <select id="estType" required>
+                                    <option value="Renovation">Renovation</option>
+                                    <option value="New Build">New Build</option>
+                                    <option value="Commercial Fit-out">Commercial Fit-out</option>
+                                    <option value="Project Management">Project Management</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="estSize">Approx. size (m²)</label>
+                                <input id="estSize" type="number" min="10" max="5000" step="1" placeholder="e.g. 120" required />
+                            </div>
+
+                            <div class="field field-span">
+                                <span class="field-label" id="finishLabel">Finish level</span>
+                                <div class="finish-cards" role="radiogroup" aria-labelledby="finishLabel">
+                                    <label class="finish-card">
+                                        <input type="radio" name="estFinishRadio" value="standard" checked />
+                                        <span class="finish-card-body">
+                                            <strong>Standard</strong>
+                                            <small>Solid finishes, efficient detailing</small>
+                                        </span>
+                                    </label>
+                                    <label class="finish-card">
+                                        <input type="radio" name="estFinishRadio" value="premium" />
+                                        <span class="finish-card-body">
+                                            <strong>Premium</strong>
+                                            <small>+18% materials &amp; joinery</small>
+                                        </span>
+                                    </label>
+                                    <label class="finish-card">
+                                        <input type="radio" name="estFinishRadio" value="heritage" />
+                                        <span class="finish-card-body">
+                                            <strong>Heritage / complex</strong>
+                                            <small>+32% for constrained sites</small>
+                                        </span>
+                                    </label>
+                                </div>
+                                <select id="estFinish" class="visually-hidden" tabindex="-1" aria-hidden="true">
+                                    <option value="standard" selected>Standard</option>
+                                    <option value="premium">Premium</option>
+                                    <option value="heritage">Heritage / complex</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="estBudget">Target budget (€)</label>
+                                <input id="estBudget" type="text" placeholder="Optional" />
+                            </div>
+
+                            <div class="field field-check">
+                                <label class="check-row" for="estVat">
+                                    <input id="estVat" type="checkbox" />
+                                    <span>Show indicative 21% BTW</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="estimate-form-foot">
+                            <button class="cta estimate-submit" id="estCalcBtn" type="submit">Calculate breakdown</button>
+                            <p class="estimate-note">* Indicative only. Fixed prices follow a written scope after site survey.</p>
+                        </div>
+                    </form>
+
+                    <aside class="estimate-panel estimate-panel-xl" id="estimatePanel" aria-live="polite">
+                        <div class="estimate-sheet-head">
+                            <div class="estimate-sheet-topline">
+                                <p class="section-label">Output</p>
+                                <dl class="estimate-sheet-meta">
+                                    <div>
+                                        <dt>Date</dt>
+                                        <dd id="estDate"></dd>
+                                    </div>
+                                    <div>
+                                        <dt>Ref.</dt>
+                                        <dd id="estRef">CS-EST</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                            <h2>Investment summary</h2>
+                        </div>
+
+                        <div class="estimate-empty" id="estimateEmpty">
+                            <div class="estimate-empty-sheet" aria-hidden="true">
+                                <span class="estimate-empty-kicker">Preliminary total</span>
+                                <span class="estimate-empty-figure">€ —</span>
+                                <span class="estimate-empty-hint-line"></span>
+                            </div>
+                            <p class="estimate-empty-copy">Enter a size of at least 10 m² to see a breakdown.</p>
+                            <ul class="estimate-empty-steps">
+                                <li>Choose project type</li>
+                                <li>Enter floor area</li>
+                                <li>Pick finish level</li>
+                            </ul>
+                        </div>
+
+                        <div id="estimateBreakdown" hidden>
+                            <div class="estimate-total-block">
+                                <p class="estimate-total-kicker" id="estTotalLabel">Preliminary total</p>
+                                <p class="estimate-total" id="estTotal">€0</p>
+                                <p class="estimate-total-sub" id="estPerM2"></p>
+                            </div>
+
+                            <ul class="estimate-lines" id="estLines"></ul>
+
+                            <div class="estimate-bars" id="estBars" aria-hidden="true"></div>
+
+                            <p class="estimate-budget-note" id="estBudgetNote" hidden></p>
+
+                            <div class="estimate-panel-actions">
+                                <a class="cta" id="estContactLink" href="contact.html">Request a formal quote →</a>
+                                <a class="cta cta-secondary" href="projects.html">Browse projects</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="estimate-trust">
+                    <article>
+                        <h3>Fixed price when scoped</h3>
+                        <p>Once drawings and site conditions are clear, we lock a written sum — no silent extras.</p>
+                    </article>
+                    <article>
+                        <h3>Weekly reporting</h3>
+                        <p>Named project lead, progress notes, and photo updates while the site is active.</p>
+                    </article>
+                    <article>
+                        <h3>Survey before commit</h3>
+                        <p>This calculator is a planning tool. Formal quotes always follow an on-site assessment.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="cta-band"><div class="container">
+        <h2>Ready to build?</h2>
+        <p>Tell us about your project — renovations, new builds, or commercial fit-outs.</p>
+        <a class="cta" href="contact.html">Get in touch →</a>
+    </div></section>
+
+    <footer><div class="container">
+        <div class="site-footer-grid">
+            <div><a class="footer-wordmark" href="../index.html">Constructo</a><p>General contracting and renovations across Amsterdam and the Randstad.</p></div>
+            <div><h4>Explore</h4><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="estimate.html">Estimate</a><a href="faq.html">FAQ</a></div>
+            <div><h4>Company</h4><a href="about.html">About</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div>
+            <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a></div>
+        </div>
+        <div class="footer-inner"><div>© <span id="year"></span> Constructo — Building with integrity.</div><div>Prototype for Verdieping Software</div></div>
+    </div></footer>
+
+    <script src="../js/i18n-dict.js"></script>
+    <script src="../js/nav-mega.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/page-transition.js"></script>
+    <script src="../js/page.js"></script>
+    <script src="../js/estimate.js"></script>
+    <script src="../js/cookies.js"></script>
+</body>
+</html>
