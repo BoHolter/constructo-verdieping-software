@@ -63,8 +63,10 @@
       e.preventDefault();
       // close menus if open
       document.getElementById("mainMenu")?.classList.remove("open");
+      document.body.classList.remove("nav-drawer-open");
       document.querySelectorAll(".has-mega.is-open").forEach((el) => el.classList.remove("is-open"));
       document.querySelector(".site-header")?.classList.remove("mega-open");
+      document.getElementById("menuToggle")?.setAttribute("aria-expanded", "false");
       go(link.href);
     },
     true

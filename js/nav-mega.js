@@ -182,8 +182,12 @@
   menu.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => {
       closeAll();
-      menu.classList.remove("open");
-      document.getElementById("menuToggle")?.setAttribute("aria-expanded", "false");
+      if (window.ConstructoNavDrawer?.close) window.ConstructoNavDrawer.close();
+      else {
+        menu.classList.remove("open");
+        document.body.classList.remove("nav-drawer-open");
+        document.getElementById("menuToggle")?.setAttribute("aria-expanded", "false");
+      }
     });
   });
 

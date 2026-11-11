@@ -1206,23 +1206,82 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
 
 /* —— Tablet portrait / large phone landscape —— */
 @media (max-width: 900px) {
+    body.nav-drawer-open {
+        overflow: hidden;
+    }
+    body.nav-drawer-open .site-header {
+        z-index: 80;
+        background: var(--header-bg);
+        border-bottom-color: var(--header-line);
+        box-shadow: var(--header-shadow);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+        /* Keep chrome readable over the drawer (cancel hero white-ink override) */
+        --header-ink: var(--ink);
+        --header-muted: var(--muted);
+        --header-hover: color-mix(in srgb, var(--ink) 8%, transparent);
+    }
+    .nav-drawer-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 65;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        cursor: pointer;
+        background: rgba(11, 13, 16, 0.42);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.28s ease, visibility 0.28s ease;
+    }
+    body.nav-drawer-open .nav-drawer-backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
     .nav-list {
-        display: none;
-        position: absolute;
+        display: flex;
+        position: fixed;
+        top: 0;
         right: 0;
-        top: calc(100% + 10px);
+        bottom: auto;
+        left: auto;
+        z-index: 70;
+        flex: none;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        width: min(340px, calc(100vw - var(--gutter) * 2));
-        max-height: min(78vh, 640px);
+        width: min(360px, 88vw);
+        height: 100dvh;
+        max-height: 100dvh;
+        margin: 0;
+        padding:
+            calc(72px + env(safe-area-inset-top, 0px))
+            max(16px, env(safe-area-inset-right, 0px))
+            calc(24px + env(safe-area-inset-bottom, 0px))
+            16px;
         overflow: auto;
-        background: rgba(11, 13, 16, 0.98);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        padding: 8px;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        overscroll-behavior: contain;
+        background: var(--surface);
+        color: var(--ink);
+        border: 0;
+        border-left: 1px solid var(--line);
+        box-shadow: -18px 0 48px rgba(11, 13, 16, 0.18);
+        transform: translateX(105%);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.32s ease, visibility 0.32s ease;
+        /* Drawer uses page theme tokens, not transparent-hero header ink */
+        --header-ink: var(--ink);
+        --header-muted: var(--muted);
+        --header-hover: color-mix(in srgb, var(--ink) 8%, transparent);
     }
-    .nav-list.open { display: flex }
+    .nav-list.open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
     .nav-list li { width: 100% }
     .nav-list a,
     .nav-list .theme-toggle,
@@ -1234,11 +1293,15 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
         padding: 14px 12px;
         text-align: left;
         justify-content: flex-start;
-        color: rgba(255, 255, 255, 0.88);
+        color: var(--header-muted);
     }
     .nav-list a:hover,
-    .nav-mega .mega-trigger:hover { color: #fff; }
-    .nav-list .cta { margin-top: 4px }
+    .nav-mega .mega-trigger:hover { color: var(--header-ink); }
+    .nav-list .cta {
+        margin-top: 8px;
+        justify-content: center;
+        color: var(--accent-ink);
+    }
     .mega-panel {
         position: static;
         left: auto;
@@ -1268,22 +1331,22 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
         padding: 8px 10px 14px;
         border: 0;
         box-shadow: none;
-        background: rgba(255, 255, 255, 0.03);
+        background: color-mix(in srgb, var(--ink) 4%, transparent);
         backdrop-filter: none;
         transform: none;
         opacity: 1;
     }
-    .mega-heading { color: rgba(255, 255, 255, 0.45) }
+    .mega-heading { color: var(--mega-heading) }
     .mega-link {
-        color: rgba(255, 255, 255, 0.88) !important;
-        border-bottom-color: rgba(255, 255, 255, 0.08);
+        color: var(--mega-link) !important;
+        border-bottom-color: var(--mega-line);
     }
-    .mega-link:hover { color: #fff !important }
-    .mega-desc { color: rgba(255, 255, 255, 0.45) }
-    .mega-blurb { color: rgba(255, 255, 255, 0.7) }
+    .mega-link:hover { color: var(--mega-link-hover) !important }
+    .mega-desc { color: var(--mega-desc) }
+    .mega-blurb { color: var(--mega-blurb) }
     .mega-col-accent {
-        background: rgba(26, 116, 232, 0.14);
-        border-color: rgba(26, 116, 232, 0.32);
+        background: var(--mega-accent-bg);
+        border-color: var(--mega-accent-border);
     }
     .mega-grid,
     .mega-grid-3 {
@@ -1291,8 +1354,25 @@ html.dark .service:hover { background: rgba(255, 255, 255, 0.02) }
         gap: 16px;
     }
     .mega-col-accent { padding: 14px }
-    .nav-tools { justify-content: flex-start; padding: 4px 0 }
-    .menu-toggle { display: inline-grid; place-items: center }
+    .nav-tools {
+        display: flex;
+        gap: 4px;
+        justify-content: flex-start;
+        padding: 8px 0 4px;
+        margin-top: auto;
+        border-top: 1px solid var(--line);
+    }
+    .nav-tools .theme-toggle,
+    .nav-tools .lang-toggle {
+        width: auto;
+        color: var(--header-ink);
+    }
+    .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+        position: relative;
+        z-index: 81;
+    }
     .brand span:last-child { font-size: 0.95rem }
     .frontpage {
         padding:
